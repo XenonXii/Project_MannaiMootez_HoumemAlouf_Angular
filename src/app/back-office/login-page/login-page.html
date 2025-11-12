@@ -1,0 +1,18 @@
+<div>
+   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+     <div>Connect as an Admin</div>
+    <div>
+        <label for="">Mail Adress</label>
+        <input type="text" formControlName="mail">
+    </div>
+    
+    <div>
+        <label for="">Password</label>
+        <input type="text" formControlName="password">
+    </div>
+
+    <div>
+        <input type="submit" value="connect">
+    </div>
+   </form>
+</div>
