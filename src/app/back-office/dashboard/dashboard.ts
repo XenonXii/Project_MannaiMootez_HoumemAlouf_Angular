@@ -1,6 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Menu } from "../menu/menu";
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +12,11 @@ import { Menu } from "../menu/menu";
 export class Dashboard implements OnInit{
   private router = inject(Router);
 
+  @ViewChild('menu') menu: Menu | undefined ;
   ngOnInit():void{
     if(!(sessionStorage.getItem("connected") && sessionStorage.getItem("connected")==="true")){
       this.router.navigate(['/login']);
     }
   }
+
 }

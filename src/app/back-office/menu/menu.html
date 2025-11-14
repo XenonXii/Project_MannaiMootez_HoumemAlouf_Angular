@@ -1,28 +1,25 @@
-<div class="h-screen w-64 bg-gray-900 text-gray-100 flex flex-col shadow-xl">
-  <!-- Logo / Header -->
-  <div class="p-6 text-2xl font-semibold tracking-wide border-b border-gray-700">
-    Admin Panel
+<div class="h-screen w-60 bg-gray-900 text-gray-100 flex flex-col shadow-xl">
+  <div class="p-6 text-2xl font-semibold tracking-wide border-b border-gray-700 flex gap-3">
+    <button>
+      <i-lucide [img]="MenuIcon" class="my-icon size-8"></i-lucide>
+    </button>
+    <span> Menu </span>
   </div>
-
-  <!-- Navigation Links -->
   <nav class="flex-1 px-4 py-6 space-y-3">
-    <a
-      routerLink="./controlpanel"
-      routerLinkActive="bg-gray-800 text-white"
-      class="block px-4 py-2 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-200"
-    >
-      Control Panel
+    <a routerLink="./controlpanel" routerLinkActive="bg-gray-800 text-white"
+      class="flex gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-200">
+       <i-lucide [img]="ControlPanelIcon" class="my-icon size-6"></i-lucide>
+    <span class="font"> Control Panel </span>
     </a>
-
-    <a
-      routerLink="./drafts"
-      routerLinkActive="bg-gray-800 text-white"
-      class="block px-4 py-2 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-200"
-    >
-      Draft List
+    <a routerLink="./drafts" routerLinkActive="bg-gray-800 text-white "
+      class="flex gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-200">
+       <i-lucide [img]="FileIcon" class="my-icon size-6"></i-lucide>
+    <span class="font"> Saved Drafts </span>
+    </a>
+    <a routerLink="./add" routerLinkActive="bg-gray-800 text-white "
+      class="flex gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-200">
+       <i-lucide [img]="AddPostIcon" class="my-icon size-6"></i-lucide>
+    <span class="font"> Add Post </span>
     </a>
   </nav>
-
-
-
 </div>

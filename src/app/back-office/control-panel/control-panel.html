@@ -1,1 +1,183 @@
-<p>control-panel works!</p>
+<div class="flex flex-col  p-5">
+    <div class="h-64 bg-slate-800 text-white p-6 flex flex-col justify-between rounded-lg shadow-md">
+
+        <!-- Top row: Date & Time -->
+        <div class="flex justify-between items-center mb-6">
+            <div class="text-3xl font-semibold">
+                {{ today | date: 'fullDate' }} | {{ today | date: 'shortTime' }}
+            </div>
+
+            <div class="flex gap-3">
+
+                <button (click)="onLogout()"
+                    class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-md shadow transition-colors font-medium">
+                    Close Session
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-gray-100 ">
+            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
+                <div class="text-2xl font-bold">{{ totalPosts }}</div>
+                <div class="text-xl">Total Posts</div>
+            </div>
+
+            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
+                <div class="text-2xl font-bold">{{ visiblePosts }}</div>
+                <div class="text-xl">Visible Posts</div>
+            </div>
+
+            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
+                <div class="text-2xl font-bold">{{ hiddenPosts }}</div>
+                <div class="text-xl">Hidden Posts</div>
+            </div>
+
+            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
+                <div class="text-2xl font-bold">{{ hotPosts }}</div>
+                <div class="text-xl">Hot Posts</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Search bar-->
+    <div class="bg-gray-100 text-gray-900 mt-5 p-4 rounded-lg shadow-sm flex flex-col gap-3">
+
+        <!--Search inputs-->
+        <div class="flex flex-col md:flex-row gap-3 md:items-center">
+            <!-- Search input -->
+            <input #searchInput type="text" placeholder="Search..."
+                class="flex-1 px-4 py-2 rounded-md border text-lg border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 placeholder-gray-400 transition-all"
+                (input)="onSearch(searchInput.value, searchField.value)">
+
+            <!-- Search field select -->
+            <select #searchField class="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-900 w-40 text-lg"
+                (change)="onSearch(searchInput.value, searchField.value)">
+                <option value="title">Title</option>
+                <option value="id">Id</option>
+            </select>
+        </div>
+
+
+        <!--Buttons -->
+        <div class="flex justify-between  pl-2 pr-3  mt-2">
+            <div class="order-first flex gap-3 ">
+                <button type="button" (click)="posts=allPosts"
+                class="px-4 py-2 text-lg font-medium text-gray-900 rounded-md shadow-sm border border-gray-300 bg-gray-200 hover:bg-gray-300 transition-colors">
+                All Posts
+            </button>
+
+            <button type="button" (click)="onToggleHiddenPosts()"
+                class="px-4 py-2 text-lg font-medium text-gray-900 rounded-md shadow-sm border border-gray-300 bg-gray-200 hover:bg-gray-300 transition-colors">
+                Hidden
+            </button>
+
+            <button type="button" (click)="onToggleHotTopics()"
+                class="px-4 py-2 text-lg font-medium text-gray-900 rounded-md shadow-sm border border-gray-300 bg-gray-200 hover:bg-gray-300 transition-colors">
+                Hot
+            </button>
+            </div>
+
+           <div class="order-last">
+             <a routerLink="/dashboard/add" class="">
+                <button
+                    class="flex items-center justify-center  space-x-2 px-4 py-2  text-lg font-medium bg-green-500 text-black rounded-lg
+                     hover:bg-green-600 transition-colors ">
+                    <i-lucide [img]="PlusIcon" class="my-icon size-5 opacity-80"></i-lucide>
+
+                    Add Post
+                </button>
+            </a>
+           </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="flex flex-col bg-gray-50 p-4 space-y-4 rounded-lg shadow-md text-lg">
+        <!--Posts List-->
+        @for (post of posts; track $index) {
+        <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow">
+
+            <!--Post image-->
+            <div class="md:w-60 w-full h-40 md:h-auto bg-gray-200 flex items-center justify-center overflow-hidden">
+                <img [src]="post.image || 'https://via.placeholder.com/150'" alt="Post image"
+                    class="object-cover w-full h-full">
+            </div>
+
+            <!--Post content-->
+            <div class="flex-1 p-4 flex flex-col justify-between space-y-3">
+
+                <!--Head content: date + title + visibility/hot buttons -->
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
+
+                    <!--Date and Title -->
+                    <div class="flex items-center space-x-2">
+                        <h2 class="text-xl font-semibold text-gray-800 ">{{post.title}}</h2>
+                        @for (tag of post.tags; track $index) {
+                        <span class="text-xs font-medium bg-gray-200 text-gray-800 px-2 py-1 rounded-full">
+                            {{ tag }}
+                        </span>
+                        }
+                        <span class="text-sm text-gray-500">{{post.date}}</span>
+
+
+                    </div>
+
+                    <!--Visibility and Hot Buttons -->
+                    <div class="flex space-x-2">
+                        <!--Visibility-->
+                        <button (click)="toggleVisibility(post)"
+                            class="p-2 rounded hover:bg-gray-100 transition-colors">
+                            <i-lucide [img]="post.visible ? EyeIcon : EyeOffIcon"
+                                class="my-icon size-8 text-gray-600 hover:text-gray-800"
+                                [title]="post.visible ? 'Hide' : 'Show'"></i-lucide>
+                        </button>
+
+                        <!--Hot topics-->
+                        <button (click)="toggleHot(post)" class="p-2 rounded hover:bg-gray-100 transition-colors">
+                            @if (post.hot) { <i-lucide [img]="FlameIcon"
+                                class="my-icon size-10 opacity-100 fill-amber-600"
+                                title="remove from Hot topics"></i-lucide> } @else { <i-lucide [img]="FlameIcon"
+                                class="my-icon size-10 opacity-100" title="add to hot topics"></i-lucide> }
+                        </button>
+                    </div>
+
+                </div>
+
+                <!--Description content-->
+                <div class="text-gray-700 text-lg">
+                    {{post.description}}
+                </div>
+
+                <!--Control content: delete left, inspect right -->
+                <div class="flex justify-between mt-2">
+                    <!--Delete button on left-->
+                    <button (click)="onDeletePost(post.id)"
+                        class="flex items-center justify-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                        <i-lucide [img]="TrashIcon" class="my-icon size-5 opacity-80"></i-lucide>
+                        <span>Delete</span>
+                    </button>
+
+                    <!--Inspect button on right-->
+                    <a [routerLink]="['./', post.id]">
+                        <button
+                            class="flex items-center justify-center space-x-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                            <i-lucide [img]="ScanEyeIcon" class="my-icon size-5 opacity-80"></i-lucide>
+                            <span>Inspect</span>
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        }
+    </div>
+
+
+</div>
