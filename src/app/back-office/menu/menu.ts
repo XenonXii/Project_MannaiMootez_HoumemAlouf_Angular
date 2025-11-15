@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, MenuIcon ,SlidersHorizontal,File,CirclePlus} from 'lucide-angular';
 
@@ -13,10 +13,16 @@ readonly MenuIcon = MenuIcon;
 readonly FileIcon = File;
 readonly ControlPanelIcon=SlidersHorizontal;
 readonly AddPostIcon=CirclePlus
-  collapsed:boolean = false;
+  collapsed:boolean = false; // Start expanded on desktop
+  
+  @Output() mobileMenuClose = new EventEmitter<void>();
 
   toggleSidebar() {
     this.collapsed = !this.collapsed;
+  }
+
+  closeMobileMenu() {
+    this.mobileMenuClose.emit();
   }
 
 }

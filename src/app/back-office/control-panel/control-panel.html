@@ -1,183 +1,237 @@
-<div class="flex flex-col  p-5">
-    <div class="h-64 bg-slate-800 text-white p-6 flex flex-col justify-between rounded-lg shadow-md">
+<div class="flex flex-col p-3 md:p-6 space-y-4 md:space-y-6 bg-slate-50 min-h-screen">
+  <!-- Header Section -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200">
+    <!-- Top row: Date & Time -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+      <div class="flex flex-col">
+        <h1 class="text-3xl font-bold text-slate-900">Control Panel</h1>
+        <p class="text-slate-600 mt-1">{{ today | date: 'fullDate' }} | {{ today | date: 'shortTime' }}</p>
+      </div>
 
-        <!-- Top row: Date & Time -->
-        <div class="flex justify-between items-center mb-6">
-            <div class="text-3xl font-semibold">
-                {{ today | date: 'fullDate' }} | {{ today | date: 'shortTime' }}
-            </div>
-
-            <div class="flex gap-3">
-
-                <button (click)="onLogout()"
-                    class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-md shadow transition-colors font-medium">
-                    Close Session
-                </button>
-            </div>
-        </div>
-
-        <!-- Stats row -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-gray-100 ">
-            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
-                <div class="text-2xl font-bold">{{ totalPosts }}</div>
-                <div class="text-xl">Total Posts</div>
-            </div>
-
-            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
-                <div class="text-2xl font-bold">{{ visiblePosts }}</div>
-                <div class="text-xl">Visible Posts</div>
-            </div>
-
-            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
-                <div class="text-2xl font-bold">{{ hiddenPosts }}</div>
-                <div class="text-xl">Hidden Posts</div>
-            </div>
-
-            <div class="bg-gray-700 p-4 rounded-md shadow flex flex-col items-center">
-                <div class="text-2xl font-bold">{{ hotPosts }}</div>
-                <div class="text-xl">Hot Posts</div>
-            </div>
-        </div>
-
+      <button (click)="onLogout()"
+        class="px-5 py-2.5 bg-red-600 hover:bg-red-700 rounded-xl shadow-lg shadow-red-600/30 hover:shadow-xl
+         hover:shadow-red-600/40 transition-all duration-200 font-semibold text-white transform hover:-translate-y-0.2">
+        Logout
+      </button>
     </div>
 
-    <!--Search bar-->
-    <div class="bg-gray-100 text-gray-900 mt-5 p-4 rounded-lg shadow-sm flex flex-col gap-3">
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-3xl font-bold text-blue-600">{{ totalPosts }}</div>
+            <div class="text-sm font-medium text-slate-600 mt-1">Total Posts</div>
+          </div>
+          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+        </div>
+      </div>
 
-        <!--Search inputs-->
-        <div class="flex flex-col md:flex-row gap-3 md:items-center">
-            <!-- Search input -->
-            <input #searchInput type="text" placeholder="Search..."
-                class="flex-1 px-4 py-2 rounded-md border text-lg border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400 placeholder-gray-400 transition-all"
-                (input)="onSearch(searchInput.value, searchField.value)">
+      <div
+        class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-3xl font-bold text-green-600">{{ visiblePosts }}</div>
+            <div class="text-sm font-medium text-slate-600 mt-1">Visible Posts</div>
+          </div>
+          <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-600/30">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+        </div>
+      </div>
 
-            <!-- Search field select -->
-            <select #searchField class="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-900 w-40 text-lg"
-                (change)="onSearch(searchInput.value, searchField.value)">
-                <option value="title">Title</option>
-                <option value="id">Id</option>
-            </select>
+      <div
+        class="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-3xl font-bold text-slate-600">{{ hiddenPosts }}</div>
+            <div class="text-sm font-medium text-slate-600 mt-1">Hidden Posts</div>
+          </div>
+          <div class="w-12 h-12 bg-slate-600 rounded-xl flex items-center justify-center shadow-lg shadow-slate-600/30">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-3xl font-bold text-orange-600">{{ hotPosts }}</div>
+            <div class="text-sm font-medium text-slate-600 mt-1">Hot Posts</div>
+          </div>
+          <div
+            class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-600/30">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search & Filter Section -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200">
+    <div class="flex flex-col gap-4">
+      <!-- Search Bar -->
+      <div class="flex flex-col sm:flex-row gap-2 md:gap-3">
+        <div class="flex-1 relative">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input #searchInput type="text" placeholder="Search posts..."
+            class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
+            (input)="onSearch(searchInput.value, searchField.value)">
         </div>
 
+        <select #searchField
+          class="px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 w-full md:w-40 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
+          (change)="onSearch(searchInput.value, searchField.value)">
+          <option value="title">Title</option>
+          <option value="id">ID</option>
+          <option value="tags">Catgeory</option>
+        </select>
+      </div>
 
-        <!--Buttons -->
-        <div class="flex justify-between  pl-2 pr-3  mt-2">
-            <div class="order-first flex gap-3 ">
-                <button type="button" (click)="posts=allPosts"
-                class="px-4 py-2 text-lg font-medium text-gray-900 rounded-md shadow-sm border border-gray-300 bg-gray-200 hover:bg-gray-300 transition-colors">
-                All Posts
-            </button>
+      <!-- Filter Buttons -->
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-between items-stretch sm:items-center">
+        <div class="flex flex-wrap gap-2 justify-center sm:justify-start">
+          <button type="button" (click)="posts=allPosts"
+            class="px-4 py-2 text-sm font-semibold text-slate-700 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-200">
+            All Posts
+          </button>
 
-            <button type="button" (click)="onToggleHiddenPosts()"
-                class="px-4 py-2 text-lg font-medium text-gray-900 rounded-md shadow-sm border border-gray-300 bg-gray-200 hover:bg-gray-300 transition-colors">
-                Hidden
-            </button>
+          <button type="button" (click)="onToggleHiddenPosts()"
+            class="px-4 py-2 text-sm font-semibold text-slate-700 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 hover:border-blue-600 hover:text-blue-600 transition-all duration-200">
+            Hidden Only
+          </button>
 
-            <button type="button" (click)="onToggleHotTopics()"
-                class="px-4 py-2 text-lg font-medium text-gray-900 rounded-md shadow-sm border border-gray-300 bg-gray-200 hover:bg-gray-300 transition-colors">
-                Hot
-            </button>
-            </div>
-
-           <div class="order-last">
-             <a routerLink="/dashboard/add" class="">
-                <button
-                    class="flex items-center justify-center  space-x-2 px-4 py-2  text-lg font-medium bg-green-500 text-black rounded-lg
-                     hover:bg-green-600 transition-colors ">
-                    <i-lucide [img]="PlusIcon" class="my-icon size-5 opacity-80"></i-lucide>
-
-                    Add Post
-                </button>
-            </a>
-           </div>
+          <button type="button" (click)="onToggleHotTopics()"
+            class="px-4 py-2 text-sm font-semibold text-orange-700 rounded-xl border border-orange-300 bg-orange-50 hover:bg-orange-100 hover:border-orange-600 transition-all duration-200">
+            🔥 Hot Topics
+          </button>
         </div>
 
+        <a routerLink="/dashboard/add">
+          <button
+            class="flex items-center gap-2 px-5 py-2.5 font-semibold bg-blue-600 text-white rounded-xl shadow-lg 
+            shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:bg-blue-700 transform hover:-translate-y-0.2 transition-all duration-200">
+            <i-lucide [img]="PlusIcon" class="my-icon size-5"></i-lucide>
+            Add Post
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
 
+
+  <div class="flex flex-col bg-gray-50 p-4 space-y-4 rounded-lg shadow-md text-lg">
+    <!--Posts List-->
+    @for (post of posts; track $index) {
+    <div
+      class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow">
+
+      <!--Post image-->
+      <div class="md:w-60 w-full h-40 md:h-auto bg-gray-200 flex items-center justify-center overflow-hidden">
+        <img [src]="post.image || 'https://via.placeholder.com/150'" alt="Post image"
+          class="object-cover w-full h-full">
+      </div>
+
+      <!--Post content-->
+      <div class="flex-1 p-4 flex flex-col justify-between space-y-3">
+
+        <!--Head Content -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
+
+          <!--Date and Title -->
+          <div class="flex items-center space-x-2">
+            <h2 class="text-xl font-semibold text-gray-800 ">{{post.title}}</h2>
+            @for (tag of post.tags; track $index) {
+            <span class="text-xs font-medium bg-gray-200 text-gray-800 px-2 py-1 rounded-full">
+              {{ tag }}
+            </span>
+            }
+            <span class="text-sm text-gray-500">{{post.date}}</span>
+
+
+          </div>
+
+          <!--Visibility and Hot Buttons -->
+          <div class="flex gap-2">
+            <button (click)="toggleVisibility(post)"
+              class="p-2 rounded-xl hover:bg-slate-100 transition-colors border border-slate-200"
+              [title]="post.visible ? 'Hide post' : 'Show post'">
+              <i-lucide [img]="post.visible ? EyeIcon : EyeOffIcon" class="my-icon size-6"
+                [class]="post.visible ? 'text-green-600' : 'text-slate-400'">
+              </i-lucide>
+            </button>
+
+            <button (click)="toggleHot(post)"
+              class="p-2 rounded-xl hover:bg-slate-100 transition-colors border border-slate-200"
+              [title]="post.hot ? 'Remove from hot topics' : 'Add to hot topics'">
+              <i-lucide [img]="FlameIcon" class="my-icon size-6"
+                [class]="post.hot ? 'text-orange-600 fill-orange-600' : 'text-slate-400'">
+              </i-lucide>
+            </button>
+          </div>
+
+        </div>
+
+        <!--Description content-->
+        <div class="text-gray-700 text-lg">
+          {{post.description}}
+        </div>
+
+        <!--Delete And Inspect buttons -->
+        <div class="flex justify-end gap-3 mt-2">
+          <!--Delete button on left-->
+          <button (click)="onDeletePost(post.id)" class="flex items-center justify-center space-x-2 px-4 py-2
+         border-2 border-red-500 text-red-500 bg-white
+         rounded-xl hover:bg-red-500 hover:text-white
+         hover:shadow-xl transform hover:-translate-y-0.2 
+         transition-all duration-200 font-semibold">
+
+            <i-lucide [img]="TrashIcon" class="size-5"></i-lucide>
+          </button>
+
+          <!--Inspect button on right-->
+          <a [routerLink]="['./', post.id]">
+            <button
+              class="flex items-center justify-center space-x-2 px-4 py-2
+                             bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/30 hover:shadow-xl
+                              hover:shadow-blue-600/40 transform hover:-translate-y-0.2 transition-all duration-200 font-semibold ">
+              <i-lucide [img]="ScanEyeIcon" class="my-icon size-5 opacity-80"></i-lucide>
+              <span>Inspect</span>
+            </button>
+          </a>
+        </div>
+
+      </div>
 
     </div>
-
-
-    <div class="flex flex-col bg-gray-50 p-4 space-y-4 rounded-lg shadow-md text-lg">
-        <!--Posts List-->
-        @for (post of posts; track $index) {
-        <div
-            class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow">
-
-            <!--Post image-->
-            <div class="md:w-60 w-full h-40 md:h-auto bg-gray-200 flex items-center justify-center overflow-hidden">
-                <img [src]="post.image || 'https://via.placeholder.com/150'" alt="Post image"
-                    class="object-cover w-full h-full">
-            </div>
-
-            <!--Post content-->
-            <div class="flex-1 p-4 flex flex-col justify-between space-y-3">
-
-                <!--Head content: date + title + visibility/hot buttons -->
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-2 md:space-y-0">
-
-                    <!--Date and Title -->
-                    <div class="flex items-center space-x-2">
-                        <h2 class="text-xl font-semibold text-gray-800 ">{{post.title}}</h2>
-                        @for (tag of post.tags; track $index) {
-                        <span class="text-xs font-medium bg-gray-200 text-gray-800 px-2 py-1 rounded-full">
-                            {{ tag }}
-                        </span>
-                        }
-                        <span class="text-sm text-gray-500">{{post.date}}</span>
-
-
-                    </div>
-
-                    <!--Visibility and Hot Buttons -->
-                    <div class="flex space-x-2">
-                        <!--Visibility-->
-                        <button (click)="toggleVisibility(post)"
-                            class="p-2 rounded hover:bg-gray-100 transition-colors">
-                            <i-lucide [img]="post.visible ? EyeIcon : EyeOffIcon"
-                                class="my-icon size-8 text-gray-600 hover:text-gray-800"
-                                [title]="post.visible ? 'Hide' : 'Show'"></i-lucide>
-                        </button>
-
-                        <!--Hot topics-->
-                        <button (click)="toggleHot(post)" class="p-2 rounded hover:bg-gray-100 transition-colors">
-                            @if (post.hot) { <i-lucide [img]="FlameIcon"
-                                class="my-icon size-10 opacity-100 fill-amber-600"
-                                title="remove from Hot topics"></i-lucide> } @else { <i-lucide [img]="FlameIcon"
-                                class="my-icon size-10 opacity-100" title="add to hot topics"></i-lucide> }
-                        </button>
-                    </div>
-
-                </div>
-
-                <!--Description content-->
-                <div class="text-gray-700 text-lg">
-                    {{post.description}}
-                </div>
-
-                <!--Control content: delete left, inspect right -->
-                <div class="flex justify-between mt-2">
-                    <!--Delete button on left-->
-                    <button (click)="onDeletePost(post.id)"
-                        class="flex items-center justify-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
-                        <i-lucide [img]="TrashIcon" class="my-icon size-5 opacity-80"></i-lucide>
-                        <span>Delete</span>
-                    </button>
-
-                    <!--Inspect button on right-->
-                    <a [routerLink]="['./', post.id]">
-                        <button
-                            class="flex items-center justify-center space-x-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
-                            <i-lucide [img]="ScanEyeIcon" class="my-icon size-5 opacity-80"></i-lucide>
-                            <span>Inspect</span>
-                        </button>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-        }
-    </div>
+    }
+  </div>
 
 
 </div>

@@ -77,6 +77,9 @@ onLogout() {
     } else if (field === 'id') {
       return post.id.includes(query);
     }
+    else if(field==="tags"){
+      return post.tags.some(tag => tag.toLowerCase().includes(query));
+    }
     return false;
   });
 }

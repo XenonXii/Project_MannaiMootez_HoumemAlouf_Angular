@@ -17,6 +17,10 @@ export class LoginPage implements OnInit{
   fb:FormBuilder=inject(FormBuilder);
   private router = inject(Router);
   validMail:boolean=true;
+  showPassword:boolean=false;
+  isLoading:boolean=false;
+  loginError:string='';
+  
   ngOnInit(): void {
     this.loginForm=this.fb.nonNullable.group({
       mail:["",[Validators.required]],
@@ -26,23 +30,32 @@ export class LoginPage implements OnInit{
       data=>this.admins=data
     )
   }
-  onSubmit(){
-    // console.log(this.loginForm.value)
-    // console.log(this.loginForm.get("mail")?.value)
-    // console.log(this.loginForm.get("password")?.value)
-    // console.log(this.admin.mail)
-    // console.log(this.admin.password)
-    // if(this.loginForm.get("mail")?.value.trim()===this.admin.mail.trim() && this.loginForm.get("password")?.value.trim()===this.admin.password.trim()){
-    //   this.router.navigate(['/dashboard']);
-    // }
-      const found = this.admins.find(admin =>
-    admin.mail === this.loginForm.get('mail')?.value.trim() &&
-    admin.password === this.loginForm.get('password')?.value.trim()
-  );
-  if(found){
-    sessionStorage.setItem("connected","true")
-    this.router.navigate(['/dashboard']);
+  
+  togglePasswordVisibility(){
+    this.showPassword=!this.showPassword;
   }
+  
+  onSubmit(){
+    if(this.loginForm.invalid) return;
+    
+    this.isLoading=true;
+    this.loginError='';
+    
+    // Simulate network delay for better UX
+    setTimeout(() => {
+      const found = this.admins.find(admin =>
+        admin.mail === this.loginForm.get('mail')?.value.trim() &&
+        admin.password === this.loginForm.get('password')?.value.trim()
+      );
+      
+      if(found){
+        sessionStorage.setItem("connected","true")
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.isLoading=false;
+        this.loginError='Invalid email or password. Please try again.';
+      }
+    }, 800);
   }
 
 }
