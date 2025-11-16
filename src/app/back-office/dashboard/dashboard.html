@@ -1,5 +1,4 @@
 <div class="flex flex-col md:flex-row bg-slate-50 min-h-screen">
-    <!-- Mobile Header -->
     <div class="md:hidden fixed top-0 left-0 right-0 z-20 bg-white border-b border-slate-200 p-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
@@ -18,7 +17,6 @@
       </div>
     </div>
 
-    <!-- Sidebar Menu - Always visible on desktop, toggleable on mobile -->
     <div [class.hidden]="mobileMenuClosed" class="md:block fixed inset-0 z-30 md:relative md:z-10">
       <!-- Mobile Overlay -->
       <div (click)="closeMobileMenu()" class="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"></div>

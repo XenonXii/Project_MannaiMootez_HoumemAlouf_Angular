@@ -5,7 +5,7 @@
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
       <div class="flex flex-col">
         <h1 class="text-3xl font-bold text-slate-900">Control Panel</h1>
-        <p class="text-slate-600 mt-1">{{ today | date: 'fullDate' }} | {{ today | date: 'shortTime' }}</p>
+        <p class="text-slate-600 mt-1">{{ today | date: 'fullDate' }} | {{ today | date: 'longTime' }}</p>
       </div>
 
       <button (click)="onLogout()"

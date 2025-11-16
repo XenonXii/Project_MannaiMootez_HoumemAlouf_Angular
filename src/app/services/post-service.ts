@@ -26,7 +26,11 @@ export class PostService {
     return this.http.delete<void>(`${BASE_URL}/${id}`);
   }
 
-  public updatePost(id: number, p: Post): Observable<Post> {
+  public updatePost(id: string, p: Post): Observable<Post> {
     return this.http.put<Post>(`${BASE_URL}/${id}`, p);
+  }
+
+  public deleteComment(postId: string, commentId: string): Observable<void> {
+    return this.http.delete<void>(`${BASE_URL}/${postId}/comments/${commentId}`);
   }
 }

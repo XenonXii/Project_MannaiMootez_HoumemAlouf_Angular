@@ -28,6 +28,9 @@ today: Date = new Date();
 
   ngOnInit(): void {
     if(sessionStorage.getItem("connected")){
+        setInterval(() => {
+    this.today = new Date();
+  }, 1000);
         //v1 : returns an object
     // this.postService.getPosts().subscribe({
     //   next:(data)=>{this.posts=data},
@@ -35,8 +38,9 @@ today: Date = new Date();
     // })
 
     // v2 : return 1 return
+
     this.postService.getPosts().subscribe(
-      data => { this.allPosts = data; this.posts = this.allPosts }
+      data => { this.allPosts = data; this.posts = this.allPosts.filter(p=>p.draft==false) }
       // error=>console.log(error)
     )
     }
@@ -103,7 +107,7 @@ onLogout() {
   // json update
   toggleVisibility(post: Post) {
     post.visible = !post.visible;
-    this.postService.updatePost(+post.id, post).subscribe({
+    this.postService.updatePost(post.id, post).subscribe({
       next: updated => console.log(`Post ${post.id} visibility updated`),
       error: err => console.error(err)
     });
@@ -112,7 +116,7 @@ onLogout() {
   // Toggle hot
   toggleHot(post: Post) {
     post.hot = !post.hot;
-    this.postService.updatePost(+post.id, post).subscribe({
+    this.postService.updatePost(post.id, post).subscribe({
       next: updated => console.log(`Post ${post.id} hot status updated`),
       error: err => console.error(err)
     });

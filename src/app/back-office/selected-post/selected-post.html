@@ -27,7 +27,7 @@
 
     <!-- Post Content -->
     <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200">
-      <!-- Featured Image -->
+      <!--Image -->
       @if (post.image) {
         <div class="w-full h-96 bg-slate-100 overflow-hidden">
           <img [src]="post.image" [alt]="post.title" class="w-full h-full object-cover">
@@ -35,7 +35,7 @@
       }
 
       <div class="p-8">
-        <!-- Title & Meta -->
+        <!-- Title -->
         <div class="mb-6">
           <div class="flex flex-wrap items-center gap-2 mb-3">
             @for (tag of post.tags; track $index) {
@@ -110,15 +110,25 @@
                 <div class="flex-1">
                   <div class="flex items-center gap-2 mb-1">
                     <span class="font-semibold text-slate-900">User</span>
-                    @if (comment.liked) {
-                      <span class="text-xs font-semibold bg-red-100 text-red-700 px-2 py-0.5 rounded-full border border-red-200">
-                        ❤️ Liked
-                      </span>
-                    }
+                    <span class="text-xs text-slate-500">{{ comment.date }}</span>
+                    
+                      <button (click)="onToggleLikeComment(comment)" [title]="comment.liked ? 'Unlike' : 'Like'">
+                        <i-lucide [img]="HeartIcon" class="my-icon size-6" [class.text-red-600]="comment.liked" [class.text-slate-400]="!comment.liked"></i-lucide>
+                      </button>
+                    
                   </div>
-                  <p class="text-slate-700">{{ comment.message }}</p>
+                  <p class="text-slate-700">{{ comment.message }}</p> 
                 </div>
+                <div>
+                  <button (click)="onDeleteComment(comment)" title="Delete Comment"  class="p-2 rounded-full $ hover:bg-slate-200 transition-colors">
+                    <svg class="w-6 h-6 text-slate-400 hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+
               </div>
+
             </div>
           }
         </div>
