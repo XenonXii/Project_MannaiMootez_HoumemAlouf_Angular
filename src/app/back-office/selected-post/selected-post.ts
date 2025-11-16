@@ -2,13 +2,15 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../models/post';
 import { PostService } from '../../services/post-service';
-import { Heart, LucideAngularModule } from 'lucide-angular';
+import { Heart, LucideAngularModule ,SquarePen} from 'lucide-angular';
 import { Comment } from '../../models/comment';
+import {  RouterLink } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-selected-post',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule,RouterLink],
   templateUrl: './selected-post.html',
   styleUrl: './selected-post.css'
 })
@@ -17,6 +19,8 @@ export class SelectedPost {
     post!:Post;
     postService:PostService=inject(PostService)
     readonly HeartIcon=Heart
+    readonly SquarePenIcon=SquarePen
+    
     
   activatedRoute:ActivatedRoute=inject(ActivatedRoute)
   ngOnInit(): void {

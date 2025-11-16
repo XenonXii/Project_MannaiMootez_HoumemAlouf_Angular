@@ -20,7 +20,7 @@ export class AddPost implements OnInit {
   posts:Post[]=[]
   ngOnInit(): void {
     this.postForm = this.fb.nonNullable.group({
-      id:['',[Validators.required]],
+      id:[''],
       title: ['', [Validators.required, Validators.maxLength(150)]],
       description: ['', [Validators.required, Validators.maxLength(5000)]],
       image: ['', [Validators.required]],
@@ -59,6 +59,13 @@ export class AddPost implements OnInit {
     this.postForm.get("hot")?.setValue(false);
   }
  onSubmit() {
+  if(this.postForm.invalid){
+    this.postForm.markAllAsTouched();
+    console.log("Form is invalid");
+
+  }
+  else{
+    console.log("Form Submitted!", this.postForm.value);
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, '0'); // months are 0-indexed
@@ -78,5 +85,7 @@ export class AddPost implements OnInit {
     },
   );
 }
+  }
+
 
 }

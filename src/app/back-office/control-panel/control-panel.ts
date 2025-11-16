@@ -40,7 +40,7 @@ today: Date = new Date();
     // v2 : return 1 return
 
     this.postService.getPosts().subscribe(
-      data => { this.allPosts = data; this.posts = this.allPosts.filter(p=>p.draft==false) }
+      data => { this.allPosts = data; this.posts = this.allPosts  }
       // error=>console.log(error)
     )
     }

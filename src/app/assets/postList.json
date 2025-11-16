@@ -2,68 +2,38 @@
   "posts": [
     {
       "id": "1",
-      "title": "Post 1",
+      "title": "Post 1 Editted",
+      "description": "A Long Description Edited",
       "image": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop",
-      "date": "2025-01-05",
-      "description": "A Long Description",
-      "location": {},
-      "comments": [
-        {
-          "id": "c101",
-          "message": "Amazing view!",
-          "date": "2025-01-06",
-          "liked": false
-        }
-      ],
       "visible": true,
-      "draft": false,
-      "hot": false,
+      "hot": true,
+      "date": "2025-01-05",
       "tags": [
         "sea",
-        "urbain"
+        "urbain",
+        "water"
       ]
     },
     {
       "id": "2",
       "title": "Post 2",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
-      "date": "2025-01-20",
       "description": "A Long Description",
-      "location": {},
-      "comments": [
-        {
-          "id": "c201",
-          "message": "This looks peaceful",
-          "date": "2025-01-21",
-          "liked": false
-        },
-        {
-          "id": "c202",
-          "message": "I want to go there",
-          "date": "2025-01-22",
-          "liked": true
-        },
-        {
-          "id": "c203",
-          "message": "Beautiful forest!",
-          "date": "2025-01-23",
-          "liked": false
-        }
-      ],
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
       "visible": true,
-      "draft": false,
       "hot": true,
+      "date": "2025-01-20",
       "tags": [
         "forest"
       ]
     },
     {
       "id": "3",
-      "title": "Post 3",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
-      "date": "2025-02-02",
+      "title": "Post 3 Editted",
       "description": "A Long Description",
-      "location": {},
+      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": true,
+      "date": "2025-02-02",
       "comments": [
         {
           "id": "c301",
@@ -75,7 +45,7 @@
           "id": "c302",
           "message": "Stunning desert!",
           "date": "2025-02-04",
-          "liked": true
+          "liked": false
         },
         {
           "id": "c303",
@@ -84,12 +54,10 @@
           "liked": false
         }
       ],
-      "visible": false,
-      "draft": false,
-      "hot": false,
       "tags": [
         "desert",
-        "mountain"
+        "mountain",
+        "sahara"
       ]
     },
     {
@@ -120,10 +88,21 @@
         }
       ],
       "visible": true,
-      "draft": true,
       "hot": false,
       "tags": [
         "urbain"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "dzdzdz",
+      "description": "dzdz",
+      "image": "dzdzdz",
+      "visible": true,
+      "hot": true,
+      "date": "2025-11-16",
+      "tags": [
+        "dzdz"
       ]
     }
   ]

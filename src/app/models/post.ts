@@ -10,7 +10,6 @@ export interface Post {
     location:Location;
     comments:Comment[];
     visible:boolean;
-    draft:boolean;
     hot:boolean;
     tags:string[];
 

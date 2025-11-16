@@ -5,12 +5,16 @@ import { LoginPage } from './back-office/login-page/login-page';
 import { SelectedPost } from './back-office/selected-post/selected-post';
 import { ControlPanel } from './back-office/control-panel/control-panel';
 import { AddPost } from './back-office/add-post/add-post';
+import { EditPost } from './back-office/edit-post/edit-post';
+import { AdminSettings } from './back-office/admin-settings/admin-settings';
 
 export const routes: Routes = [
     {path:"dashboard",title:"Admin Dashboard", component:Dashboard,
         children:[
             {path:"controlpanel",title:"Control Panel",component:ControlPanel},
+            {path:"edit/:id",title:"Control Panel",component:EditPost},
             {path:"add",title:"New Post",component:AddPost},
+            {path:"settings",title:"Settings",component:AdminSettings},
             {path:"controlpanel/:id",title:"Manage Post",component:SelectedPost},
             {path:"",redirectTo:"controlpanel",pathMatch:"full"}
         ]

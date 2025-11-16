@@ -1,9 +1,9 @@
 {
-  "admins":[
+  "admins": [
     {
-  "id": "1",
-  "mail": "admin@example.com",
-  "password": "admin_admin_123"
-}
+      "id": "1",
+      "mail": "admin@example.com",
+      "password": "admin_admin_123"
+    }
   ]
 }

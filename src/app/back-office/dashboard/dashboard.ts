@@ -16,7 +16,7 @@ export class Dashboard implements OnInit{
   @ViewChild('menu') menu: Menu | undefined ;
   
   ngOnInit():void{
-    if(!(sessionStorage.getItem("connected") && sessionStorage.getItem("connected")==="true")){
+    if(sessionStorage.getItem("connected")!=='true'){
       this.router.navigate(['/login']);
     }
   }

@@ -11,4 +11,10 @@ export class AdminService {
   public getAdmins():Observable<Admin[]>{
     return this.http.get<Admin[]>(BASE_URL)
   }
+  public getAdmin(id:string):Observable<Admin>{
+    return this.http.get<Admin>(`${BASE_URL}/${id}`);
+  }
+  public updateAdmin(id: string, admin: Admin): Observable<Admin> {
+    return this.http.put<Admin>(`${BASE_URL}/${id}`, admin);
+  }
 }

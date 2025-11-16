@@ -50,8 +50,10 @@ export class LoginPage implements OnInit{
       
       if(found){
         sessionStorage.setItem("connected","true")
+        sessionStorage.setItem("adminId",found.id.toString());
         this.router.navigate(['/dashboard']);
       } else {
+        
         this.isLoading=false;
         this.loginError='Invalid email or password. Please try again.';
       }

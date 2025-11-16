@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideAngularModule, MenuIcon ,SlidersHorizontal,File,CirclePlus} from 'lucide-angular';
+import { LucideAngularModule, MenuIcon ,SlidersHorizontal,File,CirclePlus,Settings} from 'lucide-angular';
 
 @Component({
   selector: 'app-menu',
@@ -13,6 +13,7 @@ readonly MenuIcon = MenuIcon;
 readonly FileIcon = File;
 readonly ControlPanelIcon=SlidersHorizontal;
 readonly AddPostIcon=CirclePlus
+readonly SettingsIcon=Settings
   collapsed:boolean = false; // Start expanded on desktop
   
   @Output() mobileMenuClose = new EventEmitter<void>();

@@ -19,6 +19,8 @@
   
   <!-- Navigation -->
   <nav class="flex-1 px-4 py-6 space-y-2">
+    <!--Control Panel-->
+
     <a routerLink="./controlpanel" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 group border border-transparent"
 
@@ -27,6 +29,7 @@
       <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Control Panel</span>
     </a>
     
+    <!--Addd Post-->
 
     <a routerLink="./add" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 group border border-transparent"
@@ -34,6 +37,15 @@
       [title]="collapsed ? 'Add Post' : ''">
       <i-lucide [img]="AddPostIcon" class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
       <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Add Post</span>
+    </a>
+
+    <!--Settings-->
+        <a routerLink="./settings" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
+      class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 group border border-transparent"
+    
+      [title]="collapsed ? 'Settings' : ''">
+      <i-lucide [img]="SettingsIcon" class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
+      <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Settings</span>
     </a>
   </nav>
   
