@@ -21,8 +21,8 @@ export class AddPost implements OnInit {
   ngOnInit(): void {
     this.postForm = this.fb.nonNullable.group({
       id:['',[Validators.required]],
-      title: ['', [Validators.required, Validators.minLength(5)]],
-      description: ['', [Validators.required, Validators.minLength(20)]],
+      title: ['', [Validators.required, Validators.maxLength(150)]],
+      description: ['', [Validators.required, Validators.maxLength(5000)]],
       image: ['', [Validators.required]],
       visible: [false],
       hot: [false],

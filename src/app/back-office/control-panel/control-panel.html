@@ -150,10 +150,10 @@
     <!--Posts List-->
     @for (post of posts; track $index) {
     <div
-      class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow">
+      class="bg-white shadow-lg rounded-lg max overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow">
 
       <!--Post image-->
-      <div class="md:w-60 w-full h-40 md:h-auto bg-gray-200 flex items-center justify-center overflow-hidden">
+      <div class="md:w-60 w-full h-40 md:h-auto bg-gray-200 flex items-center max-h-45  justify-center overflow-hidden">
         <img [src]="post.image || 'https://via.placeholder.com/150'" alt="Post image"
           class="object-cover w-full h-full">
       </div>
@@ -166,7 +166,7 @@
 
           <!--Date and Title -->
           <div class="flex items-center space-x-2">
-            <h2 class="text-xl font-semibold text-gray-800 ">{{post.title}}</h2>
+            <h2 class="text-xl font-semibold text-gray-800 overflow-hidden text-ellipsis whitespace-nowrap max-w-100">{{post.title}}</h2>
             @for (tag of post.tags; track $index) {
             <span class="text-xs font-medium bg-gray-200 text-gray-800 px-2 py-1 rounded-full">
               {{ tag }}
@@ -199,7 +199,7 @@
         </div>
 
         <!--Description content-->
-        <div class="text-gray-700 text-lg">
+        <div class="text-gray-700 text-lg text-nowrap overflow-hidden text-ellipsis w-200">
           {{post.description}}
         </div>
 
