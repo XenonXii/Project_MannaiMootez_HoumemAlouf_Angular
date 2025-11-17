@@ -5,8 +5,8 @@
       "title": "Post 1 Editted",
       "description": "A Long Description Edited",
       "image": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop",
-      "visible": true,
-      "hot": true,
+      "visible": false,
+      "hot": false,
       "date": "2025-01-05",
       "tags": [
         "sea",
@@ -28,7 +28,7 @@
     },
     {
       "id": "3",
-      "title": "Post 3 Editted",
+      "title": "Post 585",
       "description": "A Long Description",
       "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
       "visible": true,
@@ -42,12 +42,6 @@
           "liked": true
         },
         {
-          "id": "c302",
-          "message": "Stunning desert!",
-          "date": "2025-02-04",
-          "liked": false
-        },
-        {
           "id": "c303",
           "message": "I want to hike there",
           "date": "2025-02-05",
@@ -58,39 +52,6 @@
         "desert",
         "mountain",
         "sahara"
-      ]
-    },
-    {
-      "id": "4",
-      "title": "Post 4",
-      "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=600&fit=crop",
-      "date": "2025-03-10",
-      "description": "A Long Description",
-      "location": {},
-      "comments": [
-        {
-          "id": "c401",
-          "message": "Lovely urban scene",
-          "date": "2025-03-11",
-          "liked": false
-        },
-        {
-          "id": "c402",
-          "message": "Nice architecture!",
-          "date": "2025-03-12",
-          "liked": true
-        },
-        {
-          "id": "c403",
-          "message": "Looks vibrant!",
-          "date": "2025-03-13",
-          "liked": false
-        }
-      ],
-      "visible": true,
-      "hot": false,
-      "tags": [
-        "urbain"
       ]
     },
     {
