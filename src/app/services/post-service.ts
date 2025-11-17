@@ -30,6 +30,13 @@ export class PostService {
     return this.http.put<Post>(`${BASE_URL}/${id}`, p);
   }
 
+  public addComment(postId: string, comment: Comment): Observable<Post> {
+    return this.http.post<Post>(`${BASE_URL}/${postId}/comments`,  comment );
+  }
+  public getHotPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${BASE_URL}/hot`);
+  }
+
   public deleteComment(postId: string, commentId: string): Observable<void> {
     return this.http.delete<void>(`${BASE_URL}/${postId}/comments/${commentId}`);
   }
