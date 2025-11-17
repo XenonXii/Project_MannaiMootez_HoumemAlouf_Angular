@@ -3,6 +3,7 @@ import {  FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angul
 import { Admin } from '../../models/admin';
 import { Router } from '@angular/router';
 import { AdminService } from '../../services/admin-service';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login-page',
@@ -20,6 +21,7 @@ export class LoginPage implements OnInit{
   showPassword:boolean=false;
   isLoading:boolean=false;
   loginError:string='';
+  authService=inject(AuthService);
   
   ngOnInit(): void {
     this.loginForm=this.fb.nonNullable.group({
@@ -43,20 +45,22 @@ export class LoginPage implements OnInit{
     
     // Simulate network delay for better UX
     setTimeout(() => {
-      const found = this.admins.find(admin =>
-        admin.mail === this.loginForm.get('mail')?.value.trim() &&
-        admin.password === this.loginForm.get('password')?.value.trim()
-      );
       
-      if(found){
-        sessionStorage.setItem("connected","true")
-        sessionStorage.setItem("adminId",found.id.toString());
+      
+     
+
+
+      this.authService.login(this.loginForm.get('mail')?.value.trim(), this.loginForm.get('password')?.value.trim(),this.admins)
+        .subscribe((success) => {
+          if (success) {
         this.router.navigate(['/dashboard']);
-      } else {
-        
-        this.isLoading=false;
+
+          }
+          else{
+ this.isLoading=false;
         this.loginError='Invalid email or password. Please try again.';
-      }
+          }
+        });
     }, 800);
   }
 

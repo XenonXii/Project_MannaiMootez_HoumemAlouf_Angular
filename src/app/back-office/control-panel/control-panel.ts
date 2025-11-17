@@ -4,6 +4,7 @@ import { PostService } from '../../services/post-service';
 import { LucideAngularModule, Eye, EyeOff, Trash, Flame ,ScanEye,Plus} from 'lucide-angular';
 import { Router, RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { AuthService } from '../../services/auth-service';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class ControlPanel implements OnInit {
 today: Date = new Date();
 
   private router = inject(Router);
+  authService:AuthService=inject(AuthService);
 
   ngOnInit(): void {
     if(sessionStorage.getItem("connected")){
@@ -61,8 +63,9 @@ get hotPosts() { return this.allPosts.filter(p => p.hot).length; }
 
 
 onLogout() {
-  sessionStorage.removeItem("connected")
-      this.router.navigate(['/login']);
+  this.authService.logout();
+  this.router.navigate(['/login']);
+
 
 }
 

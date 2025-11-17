@@ -7,9 +7,10 @@ import { ControlPanel } from './back-office/control-panel/control-panel';
 import { AddPost } from './back-office/add-post/add-post';
 import { EditPost } from './back-office/edit-post/edit-post';
 import { AdminSettings } from './back-office/admin-settings/admin-settings';
+import { adminAuthGuard } from './guards/admin-auth-guard';
 
 export const routes: Routes = [
-    {path:"dashboard",title:"Admin Dashboard", component:Dashboard,
+    {path:"dashboard",title:"Admin Dashboard", component:Dashboard,canActivate:[adminAuthGuard],
         children:[
             {path:"controlpanel",title:"Control Panel",component:ControlPanel},
             {path:"edit/:id",title:"Control Panel",component:EditPost},
