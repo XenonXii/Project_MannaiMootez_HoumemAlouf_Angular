@@ -7,7 +7,7 @@ export interface Post {
     image:string;
     date:string;
     description:string;
-    location:Location;
+    location?:Location;
     comments:Comment[];
     visible:boolean;
     hot:boolean;

@@ -8,6 +8,9 @@ import { AddPost } from './back-office/add-post/add-post';
 import { EditPost } from './back-office/edit-post/edit-post';
 import { AdminSettings } from './back-office/admin-settings/admin-settings';
 import { adminAuthGuard } from './guards/admin-auth-guard';
+import { HomePage } from './front-office/home-page/home-page';
+import { AboutPage } from './front-office/about-page/about-page';
+import { HotTopicsList } from './front-office/hot-topics-list/hot-topics-list';
 
 export const routes: Routes = [
     {path:"dashboard",title:"Admin Dashboard", component:Dashboard,canActivate:[adminAuthGuard],
@@ -21,6 +24,9 @@ export const routes: Routes = [
         ]
     },
     {path:"login",title:"Sign In", component:LoginPage},
+    {path:"home",title:"HorizonTn", component:HomePage },
+    {path:"hottopics",title:"HorizonTn", component:HotTopicsList },
+    {path:"about",title:"About HorizonTn", component:AboutPage},
     {path:"",redirectTo:"home", pathMatch:"full"}, // this is the base url, this will redirect the user to the home page of the website
     {path:"**",title:"Erreur",component:Error404}
 ];
