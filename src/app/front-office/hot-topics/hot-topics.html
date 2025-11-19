@@ -1,4 +1,4 @@
-<div class="flex flex-col mt-3">
+<div class="flex flex-col mt-3 ">
 <div class="flex justify-between mx-10">
     <div class="text-2xl align-baseline flex flex-row w-auto font-bold pt-1">
       <svg fill="#ff5900" viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" stroke="#ff5900" 
@@ -23,18 +23,14 @@
           Hot Topics
         </span>
     </div>
-  <a routerLink="/hottopics"
-     class="text-lg cursor-pointer text-blue-600 hover:underline  inline-flex items-center gap-1 font-medium w-28 justify-end p-2 rounded">
-    View all
-    <lucide-icon [name]="ArrowIcon" class="text-black"></lucide-icon>
-  </a>
+
 </div>
 <div class="relative mx-10">
   
   <!-- Left button -->
   <button 
     (click)="scrollLeft()" 
-    class="absolute left-0 top-1/2 opacity-15 -translate-y-1/2 z-10  mx-4 text-2xl cursor-pointer
+    class="absolute left-0 top-1/2 opacity-60 -translate-y-1/2 z-10  mx-4 text-2xl cursor-pointer
            bg-white shadow-lg w-13 h-13 rounded-full flex items-center justify-center
            border border-slate-300 hover:bg-slate-100 hover:opacity-80">
       ‹
@@ -43,10 +39,11 @@
   <!-- Scroll container -->
   <div #scrollContainer 
        class="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth hide-scrollbar 
-              gap-4 p-4 flex-nowrap h-80">
+              gap-4 p-4 flex-nowrap h-80 ">
 
     @for (post of hotPosts; track $index) {
-      <section class="card-fire flex-shrink-0 w-72 h-full bg-white shadow-lg cursor-pointer
+      <a [routerLink]="['./', post.id]">
+              <section class="card-fire flex-shrink-0 w-72 h-full bg-white shadow-lg cursor-pointer
         rounded-xl md:rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl
         hover:border-blue-200 transition-all duration-200 snap-start flex flex-col">
 
@@ -63,6 +60,7 @@
         </div>
 
       </section>
+      </a>
     }
 
   </div>
@@ -70,7 +68,7 @@
   <!-- Right button -->
   <button 
     (click)="scrollRight()" 
-    class="absolute right-0 top-1/2 -translate-y-1/2 z-10  opacity-15 mx-4 text-2xl  cursor-pointer
+    class="absolute right-0 top-1/2 -translate-y-1/2 z-10  opacity-60 mx-4 text-2xl  cursor-pointer
            bg-white shadow-lg w-13 h-13 rounded-full flex items-center justify-center
            border border-slate-300 hover:bg-slate-100 hover:opacity-80">
       ›

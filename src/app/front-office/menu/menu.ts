@@ -1,4 +1,4 @@
-import { Component, Input  } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -9,6 +9,13 @@ import { RouterLink } from "@angular/router";
   styleUrl: './menu.css',
 })
 export class Menu  {
-  @Input() categories:string[]=[]
-  
+  @Input() categories: string[] = [];
+  @Output() tagSelected = new EventEmitter<string>();
+
+  onToggleTag(tag: string) {
+    this.tagSelected.emit(tag);
+  }
+  ontResetTag(){
+    this.tagSelected.emit("")
+  }
 }

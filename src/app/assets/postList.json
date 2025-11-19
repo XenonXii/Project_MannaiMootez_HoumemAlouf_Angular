@@ -2,459 +2,231 @@
   "posts": [
     {
       "id": "1",
-      "title": "Post 1 Editted",
-      "description": "A Long Description Edited A Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description EditedA Long Description Edited",
+      "title": "Sunset Over the Old Harbor",
+      "description": "A warm and calm evening at the harbor. Fishing boats slowly returning while the sky turns orange.",
       "image": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
       "date": "2025-01-05",
-      "tags": [
-        "sea",
-        "urbain"
+      "tags": ["sea", "urban", "sunset"],
+      "comments": [
+        { "id": "c1", "message": "Amazing view!", "date": "2025-01-06", "liked": true }
       ]
     },
     {
       "id": "2",
-      "title": "Post 2",
-      "description": "A Long Description",
+      "title": "Forest Morning Hike",
+      "description": "A peaceful trail through a dense forest, with sunlight filtering gently through the leaves.",
       "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
       "date": "2025-01-20",
-      "tags": [
-        "forest"
+      "tags": ["forest", "nature", "hiking"],
+      "comments": [
+        { "id": "c2", "message": "I want to go there!", "date": "2025-01-21", "liked": false }
       ]
     },
     {
       "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
+      "title": "Sahara Sand Dunes",
+      "description": "Golden dunes sculpted by the wind. The desert stretches endlessly, calm and powerful.",
       "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
       "date": "2025-02-02",
+      "tags": ["desert", "sahara", "travel"],
       "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
+        { "id": "c3", "message": "🔥🔥🔥", "date": "2025-02-03", "liked": true },
+        { "id": "c4", "message": "I want to hike there", "date": "2025-02-05", "liked": false }
       ]
+    },
+    {
+      "id": "4",
+      "title": "Snowy Mountain Peak",
+      "description": "A majestic snowy mountain standing tall above the clouds.",
+      "image": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": false,
+      "date": "2025-02-10",
+      "tags": ["mountain", "snow", "adventure"],
+      "comments": []
     },
     {
       "id": "5",
-      "title": "dzdzdz",
-      "description": "dzdz",
-      "image": "dzdzdz",
+      "title": "City Lights at Night",
+      "description": "The city skyline glowing under thousands of lights, full of life and energy.",
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
-      "date": "2025-11-16",
-      "tags": [
-        "dzdz"
+      "date": "2025-02-14",
+      "tags": ["urban", "night", "city"],
+      "comments": [
+        { "id": "c5", "message": "Looks like Tokyo!", "date": "2025-02-15", "liked": false }
       ]
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "6",
+      "title": "Ocean Blue Wave",
+      "description": "A powerful wave breaking close to the shore, crystal blue and full of motion.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": false,
+      "date": "2025-02-20",
+      "tags": ["ocean", "wave", "sea"],
+      "comments": []
+    },
+    {
+      "id": "7",
+      "title": "Ancient Temple Ruins",
+      "description": "A forgotten temple hidden deep in the jungle. Moss-covered stones and mystical vibes.",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
-      "date": "2025-02-02",
+      "date": "2025-02-25",
+      "tags": ["history", "ruins", "travel"],
       "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
+        { "id": "c6", "message": "Indiana Jones vibes!", "date": "2025-02-26", "liked": true }
       ]
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "8",
+      "title": "Calm Lake Reflection",
+      "description": "The water is so still that the mountains reflect like a mirror.",
+      "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": false,
+      "date": "2025-03-01",
+      "tags": ["lake", "reflection", "calm"],
+      "comments": []
+    },
+    {
+      "id": "9",
+      "title": "Colorful Autumn Path",
+      "description": "A beautiful path surrounded by orange, red, and yellow autumn leaves.",
+      "image": "https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
-      "date": "2025-02-02",
+      "date": "2025-03-05",
+      "tags": ["autumn", "forest", "colors"],
       "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
+        { "id": "c7", "message": "Perfect for photography!", "date": "2025-03-06", "liked": true }
       ]
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "10",
+      "title": "Old Stone Bridge",
+      "description": "A medieval stone bridge still standing over a quiet river.",
+      "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
+      "hot": false,
+      "date": "2025-03-09",
+      "tags": ["architecture", "history", "river"],
+      "comments": []
+    },
+
+
+    {
+      "id": "12",
+      "title": "Canyon Cliff View",
+      "description": "A breathtaking view from the edge of a deep canyon.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": false,
+      "date": "2025-03-12",
+      "tags": ["canyon", "landscape", "adventure"],
       "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
+        { "id": "c8", "message": "Reminds me of Arizona 🔥", "date": "2025-03-13", "liked": true }
       ]
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "13",
+      "title": "Crystal River Stream",
+      "description": "A small river running between rocks with crystal-clear water.",
+      "image": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
+      "hot": false,
+      "date": "2025-03-14",
+      "tags": ["river", "nature", "fresh"],
+      "comments": []
+    },
+    {
+      "id": "14",
+      "title": "Village Sunrise",
+      "description": "A quiet countryside village waking up under a warm sunrise.",
+      "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": false,
+      "date": "2025-03-16",
+      "tags": ["village", "sunrise", "rural"],
+      "comments": []
+    },
+    {
+      "id": "15",
+      "title": "Starry Night Sky",
+      "description": "Thousands of stars visible in the sky away from the city lights.",
+      "image": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&h=600&fit=crop",
+      "visible": true,
+      "hot": false,
+      "date": "2025-03-20",
+      "tags": ["stars", "night", "sky"],
       "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
+        { "id": "c9", "message": "So calming ✨", "date": "2025-03-21", "liked": true }
       ]
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "16",
+      "title": "Green Hills",
+      "description": "Rolling green hills stretching into the horizon.",
+      "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
+      "hot": false,
+      "date": "2025-03-22",
+      "tags": ["hills", "landscape", "green"],
+      "comments": []
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "17",
+      "title": "Rocky Coastline",
+      "description": "Waves hitting the rocks along a rugged coastline.",
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
+      "date": "2025-03-25",
+      "tags": ["coast", "rocks", "sea"],
+      "comments": []
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "18",
+      "title": "Flower Field",
+      "description": "A vast field covered with colorful spring flowers.",
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
-    },    {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
-      "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
+      "hot": false,
+      "date": "2025-03-28",
+      "tags": ["flowers", "spring", "colors"],
+      "comments": []
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "19",
+      "title": "Foggy Forest Walk",
+      "description": "A mysterious fog covers the tall pine forest early in the morning.",
+      "image": "https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce?w=800&h=600&fit=crop",
       "visible": true,
       "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
+      "date": "2025-03-30",
+      "tags": ["fog", "forest", "mood"],
+      "comments": []
     },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
+    {
+      "id": "20",
+      "title": "Lone Desert Road",
+      "description": "A straight road cutting through an empty desert landscape.",
+      "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
-    },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
-      "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
-    },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
-      "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
-    },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
-      "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
-    },
-        {
-      "id": "3",
-      "title": "Post 585",
-      "description": "A Long Description",
-      "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop",
-      "visible": true,
-      "hot": true,
-      "date": "2025-02-02",
-      "comments": [
-        {
-          "id": "c301",
-          "message": "🔥🔥🔥",
-          "date": "2025-02-03",
-          "liked": true
-        },
-        {
-          "id": "c303",
-          "message": "I want to hike there",
-          "date": "2025-02-05",
-          "liked": false
-        }
-      ],
-      "tags": [
-        "desert",
-        "mountain",
-        "sahara"
-      ]
+      "hot": false,
+      "date": "2025-04-01",
+      "tags": ["road", "desert", "travel"],
+      "comments": []
     }
   ]
 }

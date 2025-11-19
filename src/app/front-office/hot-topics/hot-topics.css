@@ -1,4 +1,3 @@
-/* Fire border around card (from previous) */
 
 .card-fire {
   position: relative;
@@ -13,7 +12,7 @@
   left: -5px;
   right: -5px;
   bottom: -5px;
-  border-radius: 1rem; /* match card rounded-xl */
+  border-radius: 1rem; 
   background: linear-gradient(45deg, #ff4d4d, #ffbb33, #ff4d4d, #ffbb33);
   background-size: 400% 400%;
   z-index: -1;
@@ -32,7 +31,6 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Image filter animation */
 .card-fire img {
   transition: filter 0.5s ease, transform 0.5s ease;
 }
@@ -43,9 +41,9 @@
 }
 
 .hide-scrollbar {
-  -ms-overflow-style: none;    /* IE and Edge */
-  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    
+  scrollbar-width: none;       
 }
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;               /* Chrome, Safari */
+  display: none;              
 }

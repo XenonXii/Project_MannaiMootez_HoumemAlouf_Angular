@@ -1,13 +1,78 @@
-        <div >
-            <!--MENU-->
-            <app-menu 
-            [categories]="categories" ></app-menu>
+<div class="min-h-screen bg-slate-50 overflow-hidden">
+    <!--MENU-->
+    <app-menu [categories]="categories" (tagSelected)="filterByTag($event)"></app-menu>
 
-            <!--HOT TOPICS-->
-            <app-hot-topics ></app-hot-topics>
+    <!--HOT TOPICS-->
+    <app-hot-topics></app-hot-topics>
 
-            <!--ALL POSTS-->
-            <div>
-            </div>
-            
+    <!--ALL POSTS-->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-3xl font-bold text-slate-900 mb-2">
+            All Posts ({{posts.length}})
         </div>
+        @if (posts.length === 0) {
+            <div class="text-center py-12">
+                <div class="text-slate-500 text-lg">No posts found</div>
+            </div>
+        }
+
+        <!--POST LIST-->
+        <div class="space-y-8 mt-8 ">
+            @for (post of posts; track post.id; let index = $index) {
+            <div class="bg-white rounded-2xl shadow-lg border  border-slate-200 overflow-hidden
+             hover:shadow-xl transition-all duration-200">
+                <div class="flex flex-col lg:flex-row">
+                    <!--IMAGE-->
+                    <div class="lg:w-1/3">
+                        <img 
+                            [src]="post.image || 'https://via.placeholder.com/400x300'" 
+                            [alt]="post.title"
+                            class="w-full h-64 lg:h-80 object-cover hover:scale-105 transition-transform duration-300" />
+                    </div>
+
+                    <!--CONTENT-->
+                    <div class="lg:w-2/3 p-6 lg:p-8 flex flex-col">
+                        <!-- Header with title and date -->
+                        <div class="flex flex-col mb-4">
+                            <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-2 leading-tight">
+                                {{post.title}}
+                            </h2>
+                            <div class="flex items-center gap-2 text-slate-500">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <span class="text-sm">{{post.date}}</span>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            @for (tag of post.tags; track $index) {
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                                {{ tag }}
+                            </span>
+                            }
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-slate-700 text-lg leading-relaxed mb-6 line-clamp-3 flex-grow">
+                            {{post.description}}
+                        </p>
+
+                        <!-- See Post Button -->
+                        <div class="flex justify-end mt-auto">
+                            <a [routerLink]="['./', post.id]" class="inline-block">
+                                <button class="bg-green-500 cursor-pointer hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                    See Post →
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

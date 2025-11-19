@@ -10,23 +10,25 @@ import { AdminSettings } from './back-office/admin-settings/admin-settings';
 import { adminAuthGuard } from './guards/admin-auth-guard';
 import { HomePage } from './front-office/home-page/home-page';
 import { AboutPage } from './front-office/about-page/about-page';
-import { HotTopicsList } from './front-office/hot-topics-list/hot-topics-list';
+import { SeePost } from './front-office/see-post/see-post';
 
 export const routes: Routes = [
-    {path:"dashboard",title:"Admin Dashboard", component:Dashboard,canActivate:[adminAuthGuard],
-        children:[
-            {path:"controlpanel",title:"Control Panel",component:ControlPanel},
-            {path:"edit/:id",title:"Control Panel",component:EditPost},
-            {path:"add",title:"New Post",component:AddPost},
-            {path:"settings",title:"Settings",component:AdminSettings},
-            {path:"controlpanel/:id",title:"Manage Post",component:SelectedPost},
-            {path:"",redirectTo:"controlpanel",pathMatch:"full"}
+    {
+        path: "dashboard", title: "Admin Dashboard", component: Dashboard, canActivate: [adminAuthGuard],
+        children: [
+            { path: "controlpanel", title: "Control Panel", component: ControlPanel },
+            { path: "edit/:id", title: "Control Panel", component: EditPost },
+            { path: "add", title: "New Post", component: AddPost },
+            { path: "settings", title: "Settings", component: AdminSettings },
+            { path: "controlpanel/:id", title: "Manage Post", component: SelectedPost },
+            { path: "", redirectTo: "controlpanel", pathMatch: "full" }
         ]
     },
-    {path:"login",title:"Sign In", component:LoginPage},
-    {path:"home",title:"HorizonTn", component:HomePage },
-    {path:"hottopics",title:"HorizonTn", component:HotTopicsList },
-    {path:"about",title:"About HorizonTn", component:AboutPage},
-    {path:"",redirectTo:"home", pathMatch:"full"}, // this is the base url, this will redirect the user to the home page of the website
-    {path:"**",title:"Erreur",component:Error404}
+    { path: "login", title: "Sign In", component: LoginPage },
+    { path: "home", title: "HorizonTn", component: HomePage },
+    { path: "home/:id", title: "HorizonTn", component: SeePost },
+
+    { path: "about", title: "About HorizonTn", component: AboutPage },
+    { path: "", redirectTo: "home", pathMatch: "full" }, // this is the base url, this will redirect the user to the home page of the website
+    { path: "**", title: "Erreur", component: Error404 }
 ];
