@@ -1,4 +1,5 @@
 /* Fire border around card (from previous) */
+
 .card-fire {
   position: relative;
   z-index: 0;
@@ -39,4 +40,12 @@
 .card-fire:hover img {
   filter: contrast(1.2) saturate(1.5) drop-shadow(0 0 5px #ff4d4d) sepia(0.5);
   transform: scale(1.05);
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;    /* IE and Edge */
+  scrollbar-width: none;       /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari */
 }
