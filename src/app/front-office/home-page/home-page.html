@@ -47,6 +47,7 @@
                                           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                                 <span class="text-sm">{{post.date}}</span>
+                                <span class="text-sm font-bold">{{post.location}}</span>
                             </div>
                         </div>
 
@@ -67,7 +68,8 @@
                         <!-- See Post Button -->
                         <div class="flex justify-end mt-auto">
                             <a [routerLink]="['./', post.id]" class="inline-block">
-                                <button class="bg-green-500 cursor-pointer hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                <button class="bg-green-500 cursor-pointer hover:bg-green-600 text-white font-semibold
+                                 py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                                     See Post →
                                 </button>
                             </a>

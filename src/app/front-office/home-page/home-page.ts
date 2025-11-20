@@ -63,6 +63,9 @@ currentField: string = '';
     else if(field==="tags"){
       return post.tags.some(tag => tag.toLowerCase().includes(query));
     }
+    else if(field==="location"){
+      return post.location.toLowerCase().includes(query.trim().toLowerCase());
+    }
     return false;
   });
 }

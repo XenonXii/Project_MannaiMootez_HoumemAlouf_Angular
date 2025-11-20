@@ -38,14 +38,11 @@ export class SeePost {
   ngOnInit(): void {
     this.idP = this.activatedRoute.snapshot.params['id'];
 
-    // Load post
     this.postService.getPost(this.idP).subscribe((post) => {
       this.post = post;
 
-      // Load weather for post location
       if (post.location) this.loadWeather(post.location);
 
-      // Load related posts
       this.postService.getPosts().subscribe((allPosts) => {
         allPosts.forEach(p => (this.nbComment += p.comments.length));
         this.relatedPosts = allPosts.filter(
@@ -80,35 +77,20 @@ export class SeePost {
       });
     }
   }
-
   private loadWeather(city: string) {
     this.weatherService.getCurrentWeather(city).subscribe({
       next: (res) => {
-        const condition = res.current.condition.text.toLowerCase();
-        let icon = this.SunIcon;
-        let desc = 'Sunny';
-
-        if (condition.includes('rain')) {
-          icon = this.CloudRainIcon;
-          desc = 'Rainy';
-        } else if (condition.includes('cloud')) {
-          icon = this.CloudIcon;
-          desc = 'Cloudy';
-        } else if (condition.includes('snow')) {
-          icon = this.CloudSnowIcon;
-          desc = 'Snowy';
-        } else if (res.current.temp_c >= 30) {
-          icon = this.SunIcon;
-          desc = 'Hot';
-        }
+        const conditionText = res.current.condition.text;
+        const iconUrl = 'https:' + res.current.condition.icon;
 
         this.weather = {
           temp: res.current.temp_c,
-          condition: desc,
-          icon: icon,
+          condition: conditionText,
+          icon: iconUrl,
         };
       },
       error: (err) => console.error('Weather error:', err),
     });
   }
+
 }

@@ -30,15 +30,15 @@
     <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200">
       <!-- Weather Card -->
 @if (weather) {
-  <div class="flex items-center gap-4 bg-yellow-50 rounded-xl p-4 border border-yellow-200 mb-6">
-    <lucide-icon [img]="weather.icon" class="w-10 h-10 text-yellow-500"></lucide-icon>
+  <div class="flex items-center gap-4 bg-slate-100 rounded-xl p-4 border border-slate-200 mb-6">
+    <img [src]="weather.icon" alt="{{ weather.condition }}" class="w-20 h-20">
     <div>
-      <h4 class="font-semibold text-lg text-slate-900">Weather in {{post.location}}</h4>
+      <h4 class="font-semibold text-lg text-slate-900">Weather</h4>
       <p class="text-slate-700">{{ weather.temp }}°C - {{ weather.condition }}</p>
-
     </div>
   </div>
 }
+
 
 
       @if (post.image) {
