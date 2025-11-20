@@ -1,5 +1,4 @@
 import { Comment } from "./comment";
-import { Location } from "./location";
 
 export interface Post {
     id:string;
@@ -7,7 +6,7 @@ export interface Post {
     image:string;
     date:string;
     description:string;
-    location?:Location;
+    location:string;
     comments:Comment[];
     visible:boolean;
     hot:boolean;

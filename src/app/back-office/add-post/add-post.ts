@@ -27,6 +27,7 @@ export class AddPost implements OnInit {
       visible: [false],
       hot: [false],
       date:[""],
+      location:["",[Validators.required]],
       tags: this.fb.array([])
     });
       this.postService.getPosts().subscribe(
@@ -77,7 +78,7 @@ export class AddPost implements OnInit {
     id: (this.posts.length + 1).toString(),
     date: formattedDate
   });
-
+  console.log("hello")
   this.postService.addPost(this.postForm.value).subscribe(
     data => {
       console.log(data);

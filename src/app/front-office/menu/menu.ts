@@ -11,6 +11,8 @@ import { RouterLink } from "@angular/router";
 export class Menu  {
   @Input() categories: string[] = [];
   @Output() tagSelected = new EventEmitter<string>();
+  @Output() query=new EventEmitter<string>()
+  @Output() field=new EventEmitter<string>()
 
   onToggleTag(tag: string) {
     this.tagSelected.emit(tag);
@@ -18,4 +20,13 @@ export class Menu  {
   ontResetTag(){
     this.tagSelected.emit("")
   }
+
+  onSearch(input:string,selector:string){
+    this.query.emit(input)
+    this.field.emit(selector)
+  }
+
+
+
+
 }

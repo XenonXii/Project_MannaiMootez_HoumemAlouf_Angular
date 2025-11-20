@@ -1,6 +1,9 @@
 <div class="min-h-screen bg-slate-50 overflow-hidden">
     <!--MENU-->
-    <app-menu [categories]="categories" (tagSelected)="filterByTag($event)"></app-menu>
+    <app-menu [categories]="categories" (tagSelected)="filterByTag($event)" 
+    (query)="onSearch($event, currentField)"
+    (field)="currentField = $event">
+    ></app-menu>
 
     <!--HOT TOPICS-->
     <app-hot-topics></app-hot-topics>

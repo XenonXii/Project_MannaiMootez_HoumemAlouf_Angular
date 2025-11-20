@@ -12,7 +12,7 @@ import { RouterLink } from "@angular/router";
   styleUrl: './home-page.css',
 })
 export class HomePage implements OnInit {
-
+currentField: string = '';
   allPosts: Post[] = []; 
   posts: Post[] = [];
   categories: string[] = [];
@@ -47,4 +47,24 @@ export class HomePage implements OnInit {
       }
     }
   }
+
+    onSearch(query: string, field: string) {
+  query = query.toLowerCase().trim();
+
+  if (!query) {
+    this.posts = this.allPosts;
+    return;
+  }
+
+  this.posts = this.allPosts.filter(post => {
+    if (field === 'title') {
+      return post.title.toLowerCase().includes(query);
+    } 
+    else if(field==="tags"){
+      return post.tags.some(tag => tag.toLowerCase().includes(query));
+    }
+    return false;
+  });
+}
+
 }

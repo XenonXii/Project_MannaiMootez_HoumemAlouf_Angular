@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Post } from '../models/post';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Comment } from '../models/comment';
 
 const BASE_URL = "http://localhost:4002/posts";
 
@@ -34,9 +35,16 @@ export class PostService {
     return this.http.put<Post>(`${BASE_URL}/${id}`, p);
   }
 
-  public addComment(postId: string, comment: Comment): Observable<Post> {
-    return this.http.post<Post>(`${BASE_URL}/${postId}/comments`,  comment );
-  }
+public addComment(postId: string, comment: Comment): Observable<Post> {
+  return new Observable<Post>((observer) => {
+    this.http.get<Post>(`${BASE_URL}/${postId}`).subscribe(post => {
+      post.comments.push(comment);
+      this.http.put<Post>(`${BASE_URL}/${postId}`, post).subscribe(observer);
+    });
+  });
+}
+
+
   public getHotPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${BASE_URL}?hot=true`);
   }

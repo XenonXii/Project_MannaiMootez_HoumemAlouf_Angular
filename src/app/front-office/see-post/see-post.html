@@ -28,6 +28,18 @@
 
     <!-- Post Card -->
     <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200">
+      <!-- Weather Card -->
+@if (weather) {
+  <div class="flex items-center gap-4 bg-yellow-50 rounded-xl p-4 border border-yellow-200 mb-6">
+    <lucide-icon [img]="weather.icon" class="w-10 h-10 text-yellow-500"></lucide-icon>
+    <div>
+      <h4 class="font-semibold text-lg text-slate-900">Weather in {{post.location}}</h4>
+      <p class="text-slate-700">{{ weather.temp }}°C - {{ weather.condition }}</p>
+
+    </div>
+  </div>
+}
+
 
       @if (post.image) {
         <div class="w-full h-96 bg-slate-100 overflow-hidden">
@@ -78,13 +90,8 @@
           <p class="text-slate-700 text-lg leading-relaxed">{{ post.description }}</p>
         </div>
 
-        <!-- Location -->
-        @if (post.location) {
-          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
-            <h3 class="text-sm font-bold text-slate-900 mb-2">Location</h3>
-            <p class="text-slate-700">{{ post.location }}</p>
-          </div>
-        }
+
+       
 
       </div>
     </div>
@@ -99,7 +106,25 @@
         </h3>
         
         <div class="space-y-4">
-            
+<div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 mb-5">
+  <h3 class="text-xl font-bold text-slate-900 mb-3">Add a Comment</h3>
+
+  <div class="flex gap-3">
+    <input 
+    #message
+      placeholder="Write a comment..."
+      class="flex-1 px-4 py-3 border border-slate-300 rounded-full text-lg bg-slate-50 
+      focus:outline-none focus:ring-2 focus:ring-slate-300"
+    />
+
+    <button
+      (click)="onAddComment(message.value,message)"
+      class="bg-green-500 hover:bg-green-600 text-white font-semibold 
+      px-6 py-3 rounded-xl transition-all cursor-pointer">
+      Send
+    </button>
+  </div>
+</div>
           @for (comment of post.comments; track $index) {
             <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
               <div class="flex items-start gap-3">
@@ -112,6 +137,12 @@
                   <div class="flex items-center gap-2 mb-1">
                     <span class="font-semibold text-slate-900">User</span>
                     <span class="text-xs text-slate-500">{{ comment.date }}</span>
+                   @if(comment.liked){
+  <span class="flex items-center gap-1 text-green-600 text-sm font-medium">
+    <lucide-icon [img]="HeartIcon" class="w-4 h-4"></lucide-icon>
+    Liked by Admins
+  </span>
+}
                   </div>
 
                   <p class="text-slate-700">{{ comment.message }}</p>
@@ -168,7 +199,9 @@
               <div class="flex justify-end mt-4">
                 <button
                   (click)="onSeePost(post.id)"
-                  class="bg-green-500 rounded-full px-6 py-2 text-lg font-bold hover:opacity-70 cursor-pointer">
+                  class="bg-green-500 cursor-pointer hover:bg-green-600
+                   text-white font-semibold py-3 px-8 rounded-full transition-all 
+                   duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   See Post
                 </button>
               </div>
