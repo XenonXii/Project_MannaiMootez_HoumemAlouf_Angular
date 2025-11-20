@@ -1,4 +1,5 @@
 {
+    
   "posts": [
     {
       "id": "1",
@@ -393,5 +394,13 @@
       ],
       "comments": []
     }
+  ],
+    "admins": [
+    {
+      "id": "1",
+      "mail": "admin@example.com",
+      "password": "adminadmin123"
+    }
   ]
+
 }

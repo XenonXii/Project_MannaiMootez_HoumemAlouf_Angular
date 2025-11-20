@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Comment } from '../models/comment';
 
-const BASE_URL = "http://localhost:4002/posts";
+const BASE_URL = "http://localhost:3000/posts";
 
 @Injectable({
   providedIn: 'root',
