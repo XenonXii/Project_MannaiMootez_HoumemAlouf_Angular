@@ -38,13 +38,13 @@
                 gap-5    max-w-screen overflow-x-auto overflow-y-hidden py-2 pl-7 bg-inherit">
     <!--import post list + get the list of all categories-->
     <button class="w-auto h-10 bg-slate-100 text-xl font-bold  flex justify-center 
-    items-center px-4  rounded-2xl hover:bg-slate-300  hover:cursor-pointer ease-in transition-all duration-75"
+    items-center px-4  rounded-2xl hover:bg-slate-300 focus:border focus:border-slate-400  hover:cursor-pointer ease-in transition-all duration-75"
     (click)="ontResetTag()">
         All
     </button>
     @for (cat of categories; track $index) {
     <button class="w-auto h-10 bg-slate-100 text-lg max-w-50 flex justify-center 
-    items-center px-4  rounded-2xl hover:bg-slate-300  hover:cursor-pointer ease-in transition-all duration-75"
+    items-center px-4 focus:border focus:border-slate-400  rounded-2xl hover:bg-slate-300  hover:cursor-pointer ease-in transition-all duration-75"
     (click)="onToggleTag(cat)">
         {{cat}}
     </button>

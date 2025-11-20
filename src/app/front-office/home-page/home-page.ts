@@ -12,33 +12,25 @@ import { RouterLink } from "@angular/router";
   styleUrl: './home-page.css',
 })
 export class HomePage implements OnInit {
-currentField: string = '';
-  allPosts: Post[] = []; 
+  currentField: string = "";
+  currentSearchQuery: string = "";
+  currentTag: string = "";
+
+  allPosts: Post[] = [];
   posts: Post[] = [];
   categories: string[] = [];
 
-  postService: PostService = inject(PostService);
+  postService = inject(PostService);
 
   ngOnInit(): void {
-    this.postService.getVisiblePosts().subscribe({
-      next: data => {
-        this.allPosts = data;
-        this.posts = data;
-        this.extractCategories();
-      }
+    this.postService.getVisiblePosts().subscribe(data => {
+      this.allPosts = data;
+      this.posts = data;
+      this.extractCategories();
     });
   }
 
-  filterByTag(tag: string) {
-    if(tag!=""){
-      this.posts = this.allPosts.filter(p => p.tags.includes(tag));
-    }
-    else{
-      this.posts=this.allPosts
-    }
-  }
-
-  private extractCategories(): void {
+  private extractCategories() {
     for (let post of this.allPosts) {
       for (let tag of post.tags) {
         if (!this.categories.includes(tag)) {
@@ -48,26 +40,35 @@ currentField: string = '';
     }
   }
 
-    onSearch(query: string, field: string) {
-  query = query.toLowerCase().trim();
-
-  if (!query) {
+  applyFilters() {
     this.posts = this.allPosts;
-    return;
+
+    if (this.currentTag) {
+      this.posts = this.posts.filter(p => p.tags.includes(this.currentTag));
+    }
+
+    if (this.currentSearchQuery && this.currentField) {
+      const q = this.currentSearchQuery;
+
+      this.posts = this.posts.filter(post => {
+        switch (this.currentField) {
+          case 'title': return post.title.toLowerCase().includes(q);
+          case 'tags': return post.tags.some(tag => tag.toLowerCase().includes(q));
+          case 'location': return post.location.toLowerCase().includes(q);
+        }
+        return false;
+      });
+    }
   }
 
-  this.posts = this.allPosts.filter(post => {
-    if (field === 'title') {
-      return post.title.toLowerCase().includes(query);
-    } 
-    else if(field==="tags"){
-      return post.tags.some(tag => tag.toLowerCase().includes(query));
-    }
-    else if(field==="location"){
-      return post.location.toLowerCase().includes(query.trim().toLowerCase());
-    }
-    return false;
-  });
-}
+  filterByTag(tag: string) {
+    this.currentTag = tag;
+    this.applyFilters();
+  }
 
+  onSearch(query: string, field: string) {
+    this.currentSearchQuery = query.trim().toLowerCase();
+    this.currentField = field;
+    this.applyFilters();
+  }
 }
