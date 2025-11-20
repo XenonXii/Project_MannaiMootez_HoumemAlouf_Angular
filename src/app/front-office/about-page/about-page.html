@@ -1,11 +1,59 @@
 <div class="overflow-y-scroll h-screen snap-y snap-mandatory scroll-smooth hide-scrollbar">
-  <section class="h-screen snap-start bg-blue-500 flex items-center justify-center text-white text-4xl">
-    Section 1
+
+<section id="welcome" class="h-screen snap-start flex items-center justify-center px-8 relative bg-blue-400/50 overflow-hidden">
+
+ 
+
+  <div class=" max-w-xl text-left pl-8 z-10 bg-white/40  border-4 border-slate-300 hover:bg-slate-300/75 transition-all duration-300 ease-in-out cursor-default  rounded-2xl">
+     <h1 class="text-6xl font-bold mb-4 w-auto tracking-widest text-white drop-shadow-lg">Welcome to Horizon Tn</h1>
+    <p class="text-xl tracking-wide mb-8 text-cyan-800 drop-shadow-md">
+      Discover the most beautiful natural sites in Tunisia. Explore photos, locations, categories, and share your feelings with other visitors.
+    </p>
+  </div>
+
+</section>
+
+
+  <section id="features" class="h-screen snap-start 
+  flex flex-col items-center justify-center text-center px-4">
+    <h2 class="text-4xl font-bold mb-6 text-gray-800">What Horizon Tn Offers</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl ">
+      
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold mb-2">Explore Natural Sites</h3>
+        <p>Discover hundreds of stunning natural locations across Tunisia, complete with photos and details.</p>
+      </div>
+      
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg  transition">
+        <h3 class="text-2xl font-semibold mb-2">Categories & Filters</h3>
+        <p>Find exactly what you’re looking for with a wide variety of categories and sorting options.</p>
+      </div>
+      
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold mb-2">Hot Topics & Comments</h3>
+        <p>Stay updated with daily hot topics and express your feelings about each site through comments.</p>
+      </div>
+
+    </div>
+
+    
+    
   </section>
-  <section class="h-screen snap-start bg-green-500 flex items-center justify-center text-white text-4xl">
-    Section 2
+
+  <section id="redirect" class="h-screen snap-start flex flex-col items-center justify-center text-white text-center px-4">
+    <h2 class="text-4xl font-bold mb-6">Start Your Journey Today</h2>
+    <p class="text-lg mb-8 max-w-lg">
+      Explore, discover, and share your experiences with Tunisia's most breathtaking natural sites.
+    </p>
+    <a [routerLink]="['/home']" class="px-8 py-4 bg-white text-slate-700 font-bold rounded-xl shadow hover:bg-gray-100 transition">
+      Continue To The Website
+    </a>
   </section>
-  <section class="h-screen snap-start bg-purple-500 flex items-center justify-center text-white text-4xl">
-    Section 3
-  </section>
+
 </div>
+<button class="fixed top-3.5 right-5 h-10 text-sm ">
+     <a [routerLink]="['/home']" class="px-5 py-3 text-lg bg-white text-slate-700 font-bold 
+     rounded-lg shadow hover:bg-gray-100 transition">
+      Home Page
+    </a>
+</button>

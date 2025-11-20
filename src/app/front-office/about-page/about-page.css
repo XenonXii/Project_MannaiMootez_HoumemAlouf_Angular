@@ -5,3 +5,26 @@
   -ms-overflow-style: none; /* IE & Edge */
   scrollbar-width: none;    /* Firefox */
 }
+
+ #img1 {
+      -webkit-mask-image:-webkit-gradient(linear, left , right , from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0,0,0,0));
+    }
+
+    #features{
+      background-image:url("/images/img7.jpg") ;
+      background-repeat: no-repeat  ;
+      background-size: cover;
+
+    }
+    #redirect{
+           background-image:url("/images/img4.jpg") ;
+      background-repeat: no-repeat ;
+      background-size: cover;
+    }
+
+    #welcome{
+                 background-image:url("/images/img1.jpg") ;
+      background-repeat: no-repeat ;
+      background-size: cover;
+    }
