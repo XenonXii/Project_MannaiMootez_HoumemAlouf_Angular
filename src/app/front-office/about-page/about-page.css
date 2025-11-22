@@ -12,7 +12,8 @@
     }
 
     #features{
-      background-image:url("/images/img7.jpg") ;
+      background:linear-gradient(to bottom, rgb(255, 236, 196),rgb(180, 182, 243));
+
       background-repeat: no-repeat  ;
       background-size: cover;
 
@@ -28,3 +29,4 @@
       background-repeat: no-repeat ;
       background-size: cover;
     }
+

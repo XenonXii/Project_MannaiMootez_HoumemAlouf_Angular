@@ -20,7 +20,6 @@ export class SeePost {
   nbComment: number = 0;
   newCommentMessage: string = '';
 
-  // Weather
   weather: { temp: number; condition: string; icon: any } | null = null;
 
   readonly HeartIcon = Heart;
@@ -73,6 +72,7 @@ export class SeePost {
           this.post = updatedPost;
           this.newCommentMessage = '';
           field.value = '';
+          this.nbComment++;
         },
       });
     }

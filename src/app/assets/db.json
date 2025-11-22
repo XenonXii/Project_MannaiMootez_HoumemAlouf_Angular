@@ -1,5 +1,4 @@
 {
-    
   "posts": [
     {
       "id": "1",
@@ -32,6 +31,30 @@
           "id": "c14",
           "message": "i love Bizerte",
           "date": "2025-11-20",
+          "liked": false
+        },
+        {
+          "id": "c16",
+          "message": "comment 1",
+          "date": "2025-11-22",
+          "liked": false
+        },
+        {
+          "id": "c16",
+          "message": "commment 2",
+          "date": "2025-11-22",
+          "liked": false
+        },
+        {
+          "id": "c18",
+          "message": "comment 3",
+          "date": "2025-11-22",
+          "liked": false
+        },
+        {
+          "id": "c19",
+          "message": "comment 4",
+          "date": "2025-11-22",
           "liked": false
         }
       ]
@@ -395,12 +418,11 @@
       "comments": []
     }
   ],
-    "admins": [
+  "admins": [
     {
       "id": "1",
       "mail": "admin@example.com",
       "password": "adminadmin123"
     }
   ]
-
 }
