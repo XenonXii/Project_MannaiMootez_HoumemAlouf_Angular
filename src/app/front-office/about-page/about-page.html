@@ -1,60 +1,48 @@
-<div class="overflow-y-scroll h-screen snap-y snap-mandatory scroll-smooth hide-scrollbar">
+<div class="min-h-screen bg-slate-800 py-12 px-4 text-white">
 
-<section id="welcome" class="h-screen snap-start flex items-center justify-center px-8 relative bg-blue-400/50 overflow-hidden">
-
- 
-
-  <div class=" max-w-5xl text-center pl-8 z-10 bg-slate-300/95 border-4 border-slate-300 hover:bg-white/40   transition-all duration-300 ease-in-out cursor-default  rounded-2xl">
-     <h1 class="text-6xl font-bold mb-4 w-auto tracking-widest text-white drop-shadow-lg">Welcome to HorizonTn</h1>
-    <p class="text-xl tracking-wide mb-8 text-cyan-800 drop-shadow-md">
-      Discover the most beautiful natural sites in Tunisia. Explore photos,
-       locations, categories, and share your feelings with other visitors.
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h1 class="text-4xl font-bold text-white mb-4">About HorizonTn</h1>
+    <p class="text-lg text-slate-300 leading-relaxed">
+      HorizonTn is your go-to platform for discovering this beautiful country.
+      Our mission is to connect people in Tunisia and provide a clean, modern 
+      interface for exploring content that matters to you.
     </p>
   </div>
 
-</section>
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-8 text-center">Meet the Developers</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
+      <div class="bg-slate-700 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-slate-700">
+        <img src="images/profile1.png" alt="Humam Aflouf" class="w-32 h-32 rounded-full mb-4 object-cover border-2 border-slate-600" />
+        <h3 class="text-xl font-semibold text-white mb-2">Humam Aflouf</h3>
+        <p class="text-slate-400 text-sm mb-4">Contact: <a href="mailto:humanalouf@gmail.com" class="text-blue-400 hover:underline">humanalouf@gmail.com</a></p>
+        <a href="https://github.com/hoafy" target="_blank" class="inline-block bg-slate-700 text-white px-4 py-2 rounded-xl hover:bg-blue-600 transition">
+          GitHub Profile
+        </a>
+      </div>
 
-  <section id="features" class="h-screen snap-start 
-  flex flex-col items-center justify-center text-center px-4">
-    <h2 class="text-4xl font-bold mb-6 text-gray-800">What HorizonTn Offers</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl ">
-      
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold mb-2">Explore Natural Sites</h3>
-        <p>Discover hundreds of stunning natural locations across Tunisia, complete with photos and details.</p>
-      </div>
-      
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg  transition">
-        <h3 class="text-2xl font-semibold mb-2">Categories & Filters</h3>
-        <p>Find exactly what you’re looking for with a wide variety of categories and sorting options.</p>
-      </div>
-      
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold mb-2">Hot Topics & Comments</h3>
-        <p>Stay updated with daily hot topics and express your feelings about each site through comments.</p>
+      <div class="bg-slate-700 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-slate-700">
+        <img src="images/profile2.png" alt="Mannai Mootez" class="w-32 h-32 rounded-full mb-4 object-cover border-2 border-slate-600" />
+        <h3 class="text-xl font-semibold text-white mb-2">Mannai Mootez</h3>
+        <p class="text-slate-400 text-sm mb-4">Contact: <a href="mailto:xenonxii00@gmail.com" class="text-blue-400 hover:underline">xenonxii00@gmail.com</a></p>
+        <a href="https://github.com/XenonXii" target="_blank" class="inline-block bg-slate-700 text-white px-4 py-2 rounded-xl hover:bg-blue-600 transition">
+          GitHub Profile
+        </a>
       </div>
 
     </div>
 
-    
-    
-  </section>
+    <div class="mt-12 text-center">
+      <a [routerLink]="['/home']" class="px-6 py-3 text-lg bg-green-600 text-white font-bold rounded-lg shadow hover:bg-green-500">
+        Continue to Home Page
+      </a>
+    </div>
 
-  <section id="redirect" class="h-screen snap-start flex flex-col items-center justify-center text-white text-center px-4">
-    <h2 class="text-4xl font-bold mb-6">Start Your Journey Today</h2>
-    <p class="text-lg mb-8 max-w-lg">
-      Explore, discover, and share your experiences with Tunisia's most breathtaking natural sites.
-    </p>
-    <a [routerLink]="['/home']" class="px-8 py-4 bg-white text-slate-700 font-bold rounded-xl shadow hover:bg-gray-100 transition">
-      Continue To The Website
-    </a>
-  </section>
+  </div>
+
+  <div class="max-w-4xl mx-auto mt-12 text-center text-slate-400 text-sm">
+    &copy; 2025 HorizonTn. All rights reserved.
+  </div>
 
 </div>
-<button class="fixed top-3.5 right-5 h-10 text-sm ">
-     <a [routerLink]="['/home']" class="px-5 py-3 text-lg bg-white text-slate-700 font-bold 
-     rounded-lg shadow hover:bg-gray-100 transition">
-      Home Page
-    </a>
-</button>
