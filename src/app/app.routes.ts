@@ -21,6 +21,7 @@ export const routes: Routes = [
             { path: "add", title: "New Post", component: AddPost },
             { path: "settings", title: "Settings", component: AdminSettings },
             { path: "controlpanel/:id", title: "Manage Post", component: SelectedPost },
+            
             { path: "", redirectTo: "controlpanel", pathMatch: "full" }
         ]
     },

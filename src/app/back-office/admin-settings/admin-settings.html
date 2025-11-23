@@ -45,29 +45,29 @@
         <input type="text" formControlName="password" class="w-full px-4 py-3 rounded-xl border
              border-slate-300 bg-white text-slate-900 placeholder-slate-400 
           focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
-          </div>  
-        @if (adminForm.get('password')?.invalid && adminForm.get('password')?.dirty) {
-        <div class="text-sm text-red-600 mt-1 bg-red-300/20 p-2 rounded-lg border border-red-400">
-          Password is required (minimum 12 characters).
-        </div>
-        }
+      </div>
+      @if (adminForm.get('password')?.invalid && adminForm.get('password')?.dirty) {
+      <div class="text-sm text-red-600 mt-1 bg-red-300/20 p-2 rounded-lg border border-red-400">
+        Password is required (minimum 12 characters).
+      </div>
+      }
 
-        <!--Save/Cancel Form-->
+      <!--Save/Cancel Form-->
 
-        <div class="flex flex-wrap gap-3 pt-4">
-          <button type="submit" class="w-30 bg-blue-600 text-white rounded-xl font-semibold shadow
+      <div class="flex flex-wrap gap-3 pt-4">
+        <button type="submit" class="w-30 bg-blue-600 text-white rounded-xl font-semibold shadow
            hover:bg-blue-700 transition">
-            <!-- <lucide-icon [name]="SaveIcon" class="size-5 text"></lucide-icon> -->
-            Save
-          </button>
+          <!-- <lucide-icon [name]="SaveIcon" class="size-5 text"></lucide-icon> -->
+          Save
+        </button>
 
 
 
-          <button type="button" (click)="onResetForm()" class="px-6 py-3 bg-white text-slate-700 rounded-xl 
+        <button type="button" (click)="onResetForm()" class="px-6 py-3 bg-white text-slate-700 rounded-xl 
           border border-slate-300
            hover:bg-slate-50 transition">
-            Reset to Default
-          </button>
-        </div>
+          Reset to Default
+        </button>
+      </div>
     </form>
   </div>

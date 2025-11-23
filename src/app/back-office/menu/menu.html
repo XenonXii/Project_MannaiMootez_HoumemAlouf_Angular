@@ -1,53 +1,58 @@
-<div class="h-screen w-64 md:transition-all md:duration-300 bg-white border-r border-slate-200 flex flex-col shadow-lg" [class.md:w-20]="collapsed">
+<div class="h-screen w-64 md:transition-all md:duration-300 bg-white border-r border-slate-200 flex flex-col shadow-lg"
+  [class.md:w-20]="collapsed">
   <!-- Header -->
   <div class="p-6 border-b border-slate-200">
     <div class="flex items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <button (click)="toggleSidebar()" class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-colors">
+        <button (click)="toggleSidebar()"
+          class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-colors">
           <i-lucide [img]="MenuIcon" class="my-icon size-6 text-white"></i-lucide>
         </button>
-        <span class="text-xl font-bold text-slate-900 md:transition-opacity md:duration-300" [class.md:hidden]="collapsed">Dashboard</span>
+        <span class="text-xl font-bold text-slate-900 md:transition-opacity md:duration-300"
+          [class.md:hidden]="collapsed">Dashboard</span>
       </div>
       <!-- Close button for mobile -->
-      <button (click)="closeMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center hover:bg-slate-100 rounded-lg transition-colors">
+      <button (click)="closeMobileMenu()"
+        class="md:hidden w-10 h-10 flex items-center justify-center hover:bg-slate-100 rounded-lg transition-colors">
         <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </div>
-  
+
   <!-- Navigation -->
   <nav class="flex-1 px-4 py-6 space-y-2">
     <!--Control Panel-->
 
     <a routerLink="./controlpanel" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 group border border-transparent"
-
       [title]="collapsed ? 'Control Panel' : ''">
-      <i-lucide [img]="ControlPanelIcon" class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
-      <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Control Panel</span>
+      <i-lucide [img]="ControlPanelIcon"
+        class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
+      <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Control
+        Panel</span>
     </a>
-    
+
     <!--Addd Post-->
 
     <a routerLink="./add" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 group border border-transparent"
-    
       [title]="collapsed ? 'Add Post' : ''">
-      <i-lucide [img]="AddPostIcon" class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
+      <i-lucide [img]="AddPostIcon"
+        class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
       <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Add Post</span>
     </a>
 
     <!--Settings-->
-        <a routerLink="./settings" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
+    <a routerLink="./settings" routerLinkActive="bg-blue-50 text-blue-700 border-blue-600"
       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 group border border-transparent"
-    
       [title]="collapsed ? 'Settings' : ''">
-      <i-lucide [img]="SettingsIcon" class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
+      <i-lucide [img]="SettingsIcon"
+        class="my-icon size-5 text-slate-600 group-hover:text-blue-600 transition-colors"></i-lucide>
       <span class="font-medium text-slate-700 group-hover:text-slate-900" [class.md:hidden]="collapsed">Settings</span>
     </a>
   </nav>
-  
+
 
 </div>

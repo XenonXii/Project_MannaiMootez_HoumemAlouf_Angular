@@ -43,7 +43,6 @@ export class LoginPage implements OnInit{
     this.isLoading=true;
     this.loginError='';
     
-    // Simulate network delay for better UX
     setTimeout(() => {
       
       

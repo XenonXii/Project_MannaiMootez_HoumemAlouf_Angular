@@ -100,8 +100,7 @@
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
-          <input #searchInput type="text" placeholder="Search posts..."
-            class="w-full pl-12 pr-4 py-3 rounded-xl border
+          <input #searchInput type="text" placeholder="Search posts..." class="w-full pl-12 pr-4 py-3 rounded-xl border
              border-slate-300 bg-white text-slate-900 placeholder-slate-400
               focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
             (input)="onSearch(searchInput.value, searchField.value)">
@@ -168,7 +167,8 @@
 
           <!--Date and Title -->
           <div class="flex items-center space-x-2">
-            <h2 class="text-xl font-semibold text-gray-800 overflow-hidden text-ellipsis whitespace-nowrap max-w-100">{{post.title}}</h2>
+            <h2 class="text-xl font-semibold text-gray-800 overflow-hidden text-ellipsis whitespace-nowrap max-w-100">
+              {{post.title}}</h2>
             @for (tag of post.tags; track $index) {
             <span class="text-xs font-medium bg-gray-200 text-gray-800 px-2 py-1 rounded-full">
               {{ tag }}

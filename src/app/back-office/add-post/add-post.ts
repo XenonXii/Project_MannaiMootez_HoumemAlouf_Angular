@@ -17,21 +17,21 @@ export class AddPost implements OnInit {
   fb: FormBuilder = inject(FormBuilder);
   private router = inject(Router);
   postService: PostService = inject(PostService);
-  posts:Post[]=[]
+  posts: Post[] = []
   ngOnInit(): void {
     this.postForm = this.fb.nonNullable.group({
-      id:[''],
+      id: [''],
       title: ['', [Validators.required, Validators.maxLength(150)]],
       description: ['', [Validators.required, Validators.maxLength(5000)]],
       image: ['', [Validators.required]],
       visible: [false],
       hot: [false],
-      date:[""],
-      location:["",[Validators.required]],
+      date: [""],
+      location: ["", [Validators.required]],
       tags: this.fb.array([])
     });
-      this.postService.getPosts().subscribe(
-      data => { this.posts = data;}
+    this.postService.getPosts().subscribe(
+      data => { this.posts = data; }
       // error=>console.log(error)
     )
   }
@@ -59,33 +59,33 @@ export class AddPost implements OnInit {
     this.postForm.get("visible")?.setValue(false);
     this.postForm.get("hot")?.setValue(false);
   }
- onSubmit() {
-  if(this.postForm.invalid){
-    this.postForm.markAllAsTouched();
-    console.log("Form is invalid");
+  onSubmit() {
+    if (this.postForm.invalid) {
+      this.postForm.markAllAsTouched();
+      console.log("Form is invalid");
 
-  }
-  else{
-    console.log("Form Submitted!", this.postForm.value);
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); // months are 0-indexed
-  const dd = String(today.getDate()).padStart(2, '0');
+    }
+    else {
+      console.log("Form Submitted!", this.postForm.value);
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0'); // months are 0-indexed
+      const dd = String(today.getDate()).padStart(2, '0');
 
-  const formattedDate = `${yyyy}-${mm}-${dd}`;
+      const formattedDate = `${yyyy}-${mm}-${dd}`;
 
-  this.postForm.patchValue({
-    id: (this.posts.length + 1).toString(),
-    date: formattedDate
-  });
-  console.log("hello")
-  this.postService.addPost(this.postForm.value).subscribe(
-    data => {
-      console.log(data);
-      this.router.navigate(['/dashboard/controlpanel']);
-    },
-  );
-}
+      this.postForm.patchValue({
+        id: (this.posts.length + 1).toString(),
+        date: formattedDate
+      });
+      console.log("hello")
+      this.postService.addPost(this.postForm.value).subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(['/dashboard/controlpanel']);
+        },
+      );
+    }
   }
 
 

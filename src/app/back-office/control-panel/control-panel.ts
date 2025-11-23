@@ -33,17 +33,10 @@ today: Date = new Date();
         setInterval(() => {
     this.today = new Date();
   }, 1000);
-        //v1 : returns an object
-    // this.postService.getPosts().subscribe({
-    //   next:(data)=>{this.posts=data},
-    //   error:(error)=>{console.log(error)}
-    // })
-
-    // v2 : return 1 return
+   
 
     this.postService.getPosts().subscribe(
       data => { this.allPosts = data; this.posts = this.allPosts  }
-      // error=>console.log(error)
     )
     }
     else{

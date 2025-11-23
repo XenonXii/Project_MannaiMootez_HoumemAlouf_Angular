@@ -14,7 +14,7 @@ readonly FileIcon = File;
 readonly ControlPanelIcon=SlidersHorizontal;
 readonly AddPostIcon=CirclePlus
 readonly SettingsIcon=Settings
-  collapsed:boolean = false; // Start expanded on desktop
+  collapsed:boolean = false; 
   
   @Output() mobileMenuClose = new EventEmitter<void>();
 

@@ -6,7 +6,7 @@
       "description": "A warm and calm evening at the harbor. Fishing boats slowly returning while the sky turns orange.",
       "image": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": false,
+      "hot": true,
       "date": "2025-01-05",
       "location": "Bizerte",
       "tags": [
@@ -25,36 +25,12 @@
           "id": "c13",
           "message": "i love sea",
           "date": "2025-11-20",
-          "liked": false
+          "liked": true
         },
         {
           "id": "c14",
           "message": "i love Bizerte",
           "date": "2025-11-20",
-          "liked": false
-        },
-        {
-          "id": "c16",
-          "message": "comment 1",
-          "date": "2025-11-22",
-          "liked": false
-        },
-        {
-          "id": "c16",
-          "message": "commment 2",
-          "date": "2025-11-22",
-          "liked": false
-        },
-        {
-          "id": "c18",
-          "message": "comment 3",
-          "date": "2025-11-22",
-          "liked": false
-        },
-        {
-          "id": "c19",
-          "message": "comment 4",
-          "date": "2025-11-22",
           "liked": false
         }
       ]
@@ -135,7 +111,7 @@
       "description": "A majestic snowy mountain standing tall above the clouds.",
       "image": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": false,
+      "hot": true,
       "date": "2025-02-10",
       "location": "Kasserine",
       "tags": [
@@ -174,7 +150,7 @@
       "description": "A powerful wave breaking close to the shore, crystal blue and full of motion.",
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "visible": true,
-      "hot": false,
+      "hot": true,
       "date": "2025-02-20",
       "location": "Sfax",
       "tags": [

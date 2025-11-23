@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
-    
   },
   "prettier": {
     "printWidth": 100,
@@ -29,6 +28,7 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.12",
+    "dotenv": "^17.2.3",
     "lucide-angular": "^0.553.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
