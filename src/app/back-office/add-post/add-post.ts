@@ -28,7 +28,7 @@ export class AddPost implements OnInit {
       hot: [false],
       date: [""],
       location: ["", [Validators.required]],
-      tags: this.fb.array([])
+      tags: this.fb.array([],[Validators.minLength(1)])
     });
     this.postService.getPosts().subscribe(
       data => { this.posts = data; }
@@ -60,7 +60,7 @@ export class AddPost implements OnInit {
     this.postForm.get("hot")?.setValue(false);
   }
   onSubmit() {
-    if (this.postForm.invalid) {
+    if (this.postForm.invalid ) {
       this.postForm.markAllAsTouched();
       console.log("Form is invalid");
 
