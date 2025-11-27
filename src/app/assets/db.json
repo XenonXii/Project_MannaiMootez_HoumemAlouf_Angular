@@ -8,7 +8,27 @@
       "visible": true,
       "hot": true,
       "date": "2025-11-24",
-      "comments": null,
+      "location": "",
+      "comments": [
+        {
+          "id": "c1-1",
+          "message": "Amazing place! The flamingos were beautiful.",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c1-2",
+          "message": "Very peaceful, perfect for nature lovers.",
+          "date": "2025-11-26",
+          "liked": true
+        },
+        {
+          "id": "c1-3",
+          "message": "The lake view is breathtaking!",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": []
     },
     {
@@ -20,6 +40,26 @@
       "hot": false,
       "date": "2025-11-24",
       "location": "Bizerte",
+      "comments": [
+        {
+          "id": "c2-1",
+          "message": "The view from the cliffs is unbelievable!",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c2-2",
+          "message": "Such a calm and beautiful spot.",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c2-3",
+          "message": "Loved the clear water!",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": []
     },
     {
@@ -31,6 +71,26 @@
       "hot": true,
       "date": "2025-11-24",
       "location": "Tunis",
+      "comments": [
+        {
+          "id": "c3-1",
+          "message": "One of the best hikes in Tunisia!",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c3-2",
+          "message": "The rock formations look incredible.",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c3-3",
+          "message": "The view at the top is worth the climb.",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": [
         "Mountain"
       ]
@@ -44,6 +104,26 @@
       "hot": false,
       "date": "2025-11-24",
       "location": "Zaghouan",
+      "comments": [
+        {
+          "id": "c4-1",
+          "message": "Amazing green landscapes!",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c4-2",
+          "message": "Great hiking trails, not too hard.",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c4-3",
+          "message": "Perfect place for nature photography.",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": [
         "Mountain"
       ]
@@ -57,6 +137,26 @@
       "hot": false,
       "date": "2025-11-24",
       "location": "Tataouine",
+      "comments": [
+        {
+          "id": "c5-1",
+          "message": "Feels like a movie scene!",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c5-2",
+          "message": "The canyon looks surreal.",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c5-3",
+          "message": "Perfect location for exploration.",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": [
         "Mountain",
         "Desert"
@@ -71,6 +171,26 @@
       "hot": true,
       "date": "2025-11-24",
       "location": "Nabeul",
+      "comments": [
+        {
+          "id": "c6-1",
+          "message": "Such a calm and relaxing place.",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c6-2",
+          "message": "The springs are really beautiful!",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c6-3",
+          "message": "Perfect escape from the city.",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": [
         "Cave"
       ]
@@ -84,8 +204,28 @@
       "hot": true,
       "date": "2025-11-24",
       "location": "Bizerte",
+      "comments": [
+        {
+          "id": "c7-1",
+          "message": "The waterfalls are amazing!",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c7-2",
+          "message": "Feels like a hidden paradise.",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c7-3",
+          "message": "Perfect place for nature photos.",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": [
-        "mountain",
+        "Mountain",
         "River",
         "Forest",
         "Waterfall"
@@ -100,6 +240,26 @@
       "hot": true,
       "date": "2025-11-24",
       "location": "Bizerte",
+      "comments": [
+        {
+          "id": "c8-1",
+          "message": "The water is so clear!",
+          "date": "2025-11-25",
+          "liked": true
+        },
+        {
+          "id": "c8-2",
+          "message": "Very peaceful and clean beach.",
+          "date": "2025-11-26",
+          "liked": false
+        },
+        {
+          "id": "c8-3",
+          "message": "One of the best natural beaches in Tunisia.",
+          "date": "2025-11-27",
+          "liked": true
+        }
+      ],
       "tags": [
         "Beach",
         "Sea",
@@ -111,7 +271,7 @@
   "admins": [
     {
       "id": "1",
-      "mail": "admin@example.com",
+      "mail": "admin@gmail.com",
       "password": "adminadmin123"
     }
   ]
